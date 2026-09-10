@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DLY Wear — Tampil Elegan Setiap Hari</title>
+
+    <meta name="description" content="DLY Wear — Busana wanita modern, simpel, dan nyaman untuk menemani setiap aktivitas.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="container nav-inner">
+            <div class="logo">
+                DLY Wear
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-tag">
+                ✦ Women's Fashion
+            </div>
+            <h1>DLY Wear</h1>
+            <div class="hero-tagline">
+                Tampil Elegan Setiap Hari
+            </div>
+            <p class="hero-description">
+                Busana wanita modern, simpel, dan nyaman yang dirancang untuk menemani setiap momen dalam keseharianmu.
+            </p>
+            <a href="#produk-section" class="hero-button">
+                Lihat Produk
+            </a>
+        </div>
+
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- HOOK -->
+    <section class="section hook">
+        <div class="container">
+            <div class="hook-content reveal">
+                <span class="section-label">Find Your Style</span>
+                <h2>Ingin punya outfit yang simpel, tapi tetap terlihat elegan?</h2>
+                <p>
+                    DLY Wear hadir untuk kamu yang ingin tampil percaya diri tanpa harus menggunakan outfit yang berlebihan.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- KEUNGGULAN -->
+    <section class="section">
+        <div class="container">
+            <div class="benefits-header reveal">
+                <span class="section-label">Why DLY Wear</span>
+                <h2 class="section-title">Dibuat untuk menemani harimu.</h2>
+                <p class="section-description">
+                    Karena pakaian bukan hanya tentang penampilan, tapi juga tentang bagaimana kamu merasa nyaman sepanjang hari.
+                </p>
+            </div>
+
+            <div class="benefits-grid">
+                <div class="benefit-card reveal">
+                    <div class="benefit-icon">✦</div>
+                    <h3>Modern</h3>
+                    <p>Desain kekinian yang mudah dipadukan dengan berbagai gaya.</p>
+                </div>
+
+                <div class="benefit-card reveal">
+                    <div class="benefit-icon">♡</div>
+                    <h3>Nyaman</h3>
+                    <p>Material pilihan yang nyaman digunakan untuk aktivitas sehari-hari.</p>
+                </div>
+
+                <div class="benefit-card reveal">
+                    <div class="benefit-icon">✧</div>
+                    <h3>Simpel</h3>
+                    <p>Minimalis namun tetap memberikan kesan elegan pada penampilan.</p>
+                </div>
+
+                <div class="benefit-card reveal">
+                    <div class="benefit-icon">♢</div>
+                    <h3>Berkualitas</h3>
+                    <p>Detail dan jahitan dibuat dengan perhatian untuk hasil yang lebih baik.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KATALOG PRODUK -->
+    <section class="section product-section" id="produk-section">
+        <div class="container">
+            <div class="product-header reveal">
+                <span class="section-label">Our Products</span>
+                <h2 class="section-title">Koleksi Pilihan</h2>
+                <p class="section-description">
+                    Gunakan tombol panah untuk melihat produk lainnya.
+                </p>
+            </div>
+
+            <div class="single-card-wrapper reveal">
+                <button class="nav-btn" onclick="prevProduct()" aria-label="Produk Sebelumnya">❮</button>
+
+                <div class="product-card" id="productCard">
+                    <img id="cardImage" src="" alt="Produk" class="product-image">
+                    <div id="cardName" class="product-name"></div>
+                    <div id="cardPrice" class="product-price"></div>
+                    <div id="cardRating" class="product-rating"></div>
+
+                    <div class="product-options">
+                        <div class="option-group">
+                            <label for="cardSize">Ukuran:</label>
+                            <select id="cardSize" onchange="onSizeChange(this.value)"></select>
+                        </div>
+                        <div class="option-group">
+                            <label for="cardColor">Warna:</label>
+                            <select id="cardColor" onchange="onColorChange(this.value)"></select>
+                        </div>
+                    </div>
+
+                    <button class="btn-buy" onclick="buyCurrentProduct()">Beli Sekarang</button>
+                </div>
+
+                <button class="nav-btn" onclick="nextProduct()" aria-label="Produk Selanjutnya">❯</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FORM PEMESANAN -->
+    <section class="section order" id="pesan">
+        <div class="container">
+            <div class="order-header reveal">
+                <span class="section-label">Order Now</span>
+                <h2 class="section-title">Siap tampil lebih elegan?</h2>
+                <p class="section-description">
+                    Isi data pemesanan di bawah ini. Setelah itu kamu akan diarahkan langsung ke WhatsApp untuk melanjutkan pesanan.
+                </p>
+            </div>
+
+            <div class="order-card reveal">
+                <form id="orderForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nama">Nama Lengkap</label>
+                            <input type="text" id="nama" placeholder="Masukkan nama kamu" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="noWa">No. WhatsApp</label>
+                            <input type="tel" id="noWa" placeholder="08xxxxxxxxxx" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="produk">Produk</label>
+                            <select id="produk" required onchange="onFormProductChange(this.value)">
+                                <option value="">Pilih produk</option>
+                                <option value="DLY Lunar Mermaid Skirt Wanita Scuba Premium">DLY Lunar Mermaid Skirt Wanita Scuba Premium</option>
+                                <option value="DLY Aurelia Blouse">DLY Aurelia Blouse</option>
+                                <option value="DLY Kima Blouse Polkadot Premium">DLY Kima Blouse Polkadot Premium</option>
+                                <option value="DLY Linya Blouse Wanita Rayon Premium Motif Elegan">DLY Linya Blouse Wanita Rayon Premium Motif Elegan</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ukuran">Ukuran</label>
+                            <select id="ukuran" required onchange="updateSummary()">
+                                <option value="">Pilih ukuran</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="jumlah">Jumlah</label>
+                            <input type="number" id="jumlah" min="1" value="1" required oninput="updateSummary()">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="warna">Warna</label>
+                            <select id="warna" required onchange="updateSummary()">
+                                <option value="">Pilih warna</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="kotaKecamatan">Kota / Kecamatan</label>
+                        <input type="text" id="kotaKecamatan" placeholder="Contoh: Kec. Menteng, Jakarta Pusat" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="alamat">Alamat Lengkap</label>
+                        <input type="text" id="alamat" placeholder="Jalan, No. Rumah, RT/RW, Kelurahan" required>
+                    </div>
+
+                    <!-- RINCIAN PESANAN & TOTAL HARGA -->
+                    <div class="order-summary" id="orderSummary">
+                        <h3>Rincian Pesanan</h3>
+                        <div class="summary-item">
+                            <span>Produk:</span>
+                            <span id="sumProduk" class="summary-val">-</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Ukuran:</span>
+                            <span id="sumUkuran" class="summary-val">-</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Warna:</span>
+                            <span id="sumWarna" class="summary-val">-</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Harga Satuan:</span>
+                            <span id="sumHargaSatuan" class="summary-val">Rp 0</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Jumlah:</span>
+                            <span id="sumJumlah" class="summary-val">1</span>
+                        </div>
+                        <div class="summary-total">
+                            <span>Total Harga:</span>
+                            <span id="sumTotal" class="total-price">Rp 0</span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="order-button">💬 Pesan via WhatsApp</button>
+
+                    <p class="order-info">
+                        Kamu akan diarahkan ke WhatsApp untuk konfirmasi pesanan secara otomatis.
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-logo">DLY Wear</div>
+        <p>Tampil elegan. Tetap nyaman.</p>
+        <p style="margin-top: 15px;">© 2026 DLY Wear. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
