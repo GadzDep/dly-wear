@@ -79,6 +79,7 @@
             background: rgba(252, 249, 247, 0.96);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border);
+            transition: all 0.3s ease;
         }
 
         .nav-inner {
@@ -92,6 +93,11 @@
             display: flex;
             align-items: center;
             height: 100%;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .logo:hover {
+            transform: scale(1.03);
         }
 
         .logo img {
@@ -110,11 +116,13 @@
             font-size: 14px;
             font-weight: 600;
             color: var(--dark);
-            transition: color .3s ease;
+            transition: color .3s ease, transform .2s ease;
+            display: inline-block;
         }
 
         .nav-item:hover {
             color: var(--pink-dark);
+            transform: translateY(-1px);
         }
 
         .dropdown {
@@ -129,20 +137,29 @@
             color: var(--dark);
             cursor: pointer;
             padding: 4px 0;
+            transition: color .3s ease;
+        }
+
+        .dropdown-btn:hover {
+            color: var(--pink-dark);
         }
 
         .dropdown-content {
-            display: none;
+            display: block;
             position: absolute;
             top: 100%;
             left: 0;
             background-color: white;
             min-width: 200px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
             border-radius: 12px;
             border: 1px solid var(--border);
             padding: 8px 0;
             z-index: 1100;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px) scale(0.95);
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
         .dropdown-content a {
@@ -151,15 +168,19 @@
             display: block;
             font-size: 13px;
             font-weight: 500;
+            transition: all 0.2s ease;
         }
 
         .dropdown-content a:hover {
             background-color: var(--pink-light);
             color: var(--pink-dark);
+            padding-left: 20px;
         }
 
         .dropdown:hover .dropdown-content {
-            display: block;
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
         }
 
         .mobile-menu-btn {
@@ -170,6 +191,11 @@
             color: var(--dark);
             cursor: pointer;
             padding: 4px;
+            transition: transform 0.2s ease;
+        }
+
+        .mobile-menu-btn:active {
+            transform: scale(0.9);
         }
 
         .product-detail-section {
@@ -184,11 +210,17 @@
             margin-bottom: 18px;
             line-height: 1.5;
             word-break: break-word;
+            animation: fadeInTranslateScale 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) both;
         }
 
         .breadcrumb a {
             color: var(--pink-dark);
             font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
         }
 
         .detail-grid {
@@ -203,6 +235,7 @@
             position: sticky;
             top: 80px;
             width: 100%;
+            animation: fadeInTranslateScale 0.8s cubic-bezier(0.165, 0.84, 0.44, 1) 0.1s both;
         }
 
         .image-wrapper {
@@ -214,6 +247,11 @@
             background: #ffffff;
             box-shadow: 0 10px 25px rgba(70,45,45,.05);
             touch-action: pan-y;
+            transition: box-shadow 0.4s ease;
+        }
+
+        .image-wrapper:hover {
+            box-shadow: 0 15px 35px rgba(70,45,45,.1);
         }
 
         .main-image-slider {
@@ -230,7 +268,7 @@
             width: 100%;
             height: 100%;
             flex-shrink: 0;
-            transition: transform 0.3s ease-out;
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
         .main-image-slider img {
@@ -238,6 +276,7 @@
             height: 100%;
             object-fit: contain;
             pointer-events: none;
+            transition: transform 0.5s ease;
         }
 
         .color-toast {
@@ -256,15 +295,15 @@
             align-items: center;
             gap: 6px;
             opacity: 0;
-            transform: translateY(10px);
+            transform: translateY(10px) scale(0.9);
             pointer-events: none;
-            transition: all 0.35s ease;
+            transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             z-index: 10;
         }
 
         .color-toast.show {
             opacity: 1;
-            transform: translateY(0);
+            transform: translateY(0) scale(1);
         }
 
         .color-toast-dot {
@@ -272,6 +311,12 @@
             height: 7px;
             border-radius: 50%;
             background-color: var(--pink);
+            animation: pulseDot 1.5s infinite ease-in-out;
+        }
+
+        @keyframes pulseDot {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.4); opacity: 0.6; }
         }
 
         .thumbnail-list {
@@ -293,15 +338,45 @@
             border: 2px solid transparent;
             cursor: pointer;
             flex-shrink: 0;
-            transition: border-color .2s ease, transform .2s ease;
+            transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .thumb-img:hover {
+            transform: translateY(-2px) scale(1.03);
+            opacity: 0.9;
         }
 
         .thumb-img.active {
             border-color: var(--pink-dark) !important;
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(169, 101, 101, 0.25);
         }
 
         .detail-info {
             width: 100%;
+        }
+
+        /* STAGGERED FADE + TRANSLATE + SCALE ANIMATION FOR RIGHT COLUMN */
+        .detail-info > * {
+            animation: fadeInTranslateScale 0.7s cubic-bezier(0.165, 0.84, 0.44, 1) both;
+        }
+
+        .detail-info > *:nth-child(1) { animation-delay: 0.15s; } /* Title */
+        .detail-info > *:nth-child(2) { animation-delay: 0.25s; } /* Rating */
+        .detail-info > *:nth-child(3) { animation-delay: 0.35s; } /* Price Box */
+        .detail-info > *:nth-child(4) { animation-delay: 0.45s; } /* Description */
+        .detail-info > *:nth-child(5) { animation-delay: 0.55s; } /* Size Chart */
+        .detail-info > *:nth-child(6) { animation-delay: 0.65s; } /* Order Card */
+
+        @keyframes fadeInTranslateScale {
+            0% {
+                opacity: 0;
+                transform: translateY(20px) scale(0.97);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
         }
 
         .detail-info .product-title {
@@ -335,6 +410,12 @@
             border-radius: 16px;
             margin-bottom: 22px;
             width: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .price-box:hover {
+            transform: translateY(-2px) scale(1.005);
+            box-shadow: 0 8px 20px rgba(169, 101, 101, 0.08);
         }
 
         .price-label-row {
@@ -353,6 +434,24 @@
             border-radius: 50px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .badge-promo::after, .badge-ongkir::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            animation: shimmer 2.5s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 200%; }
         }
 
         .badge-promo { background: #e74c3c; }
@@ -378,6 +477,7 @@
             font-weight: 600;
             font-size: 26px;
             color: var(--pink-dark);
+            transition: transform 0.2s ease;
         }
 
         .save-tag {
@@ -440,9 +540,9 @@
             border-radius: 12px;
             border: 1px solid var(--border);
             -webkit-overflow-scrolling: touch;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
         }
 
-        /* PERBAIKAN TABEL AGAR RESPONSIVITAS 100% DI HP */
         .size-table {
             width: 100%;
             border-collapse: collapse;
@@ -465,6 +565,11 @@
             border-bottom: 1px solid var(--border);
             color: var(--soft-dark);
             word-break: break-word;
+            transition: background 0.2s ease;
+        }
+
+        .size-table tr:hover td {
+            background: #fcf6f5;
         }
 
         .size-note-box {
@@ -495,6 +600,11 @@
             padding: 22px 18px;
             box-shadow: 0 12px 30px rgba(60,40,40,.05);
             width: 100%;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .detail-order-card:hover {
+            box-shadow: 0 16px 36px rgba(60,40,40,.08);
         }
 
         .step-progress-header {
@@ -514,7 +624,11 @@
             font-weight: 700;
             color: #b0a3a0;
             cursor: pointer;
-            transition: color 0.2s ease;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+        .step-tab:hover {
+            transform: translateY(-1px);
         }
 
         .step-tab.active {
@@ -532,10 +646,12 @@
             justify-content: center;
             font-size: 11px;
             font-weight: 700;
+            transition: all 0.3s ease;
         }
 
         .step-tab.active .step-badge {
             background: var(--pink-dark);
+            transform: scale(1.1);
         }
 
         .step-divider {
@@ -549,12 +665,24 @@
 
         .form-step.active {
             display: block;
-            animation: fadeInStep 0.3s ease;
+            animation: fadeInStep 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) both;
         }
 
+        /* STAGGER ANIMATION FOR FORM INPUTS */
+        .form-step.active > * {
+            animation: fadeInTranslateScale 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) both;
+        }
+
+        .form-step.active > *:nth-child(1) { animation-delay: 0.05s; }
+        .form-step.active > *:nth-child(2) { animation-delay: 0.12s; }
+        .form-step.active > *:nth-child(3) { animation-delay: 0.19s; }
+        .form-step.active > *:nth-child(4) { animation-delay: 0.26s; }
+        .form-step.active > *:nth-child(5) { animation-delay: 0.33s; }
+        .form-step.active > *:nth-child(6) { animation-delay: 0.40s; }
+
         @keyframes fadeInStep {
-            from { opacity: 0; transform: translateY(6px); }
-            to { opacity: 1; transform: translateY(0); }
+            from { opacity: 0; transform: translateY(12px) scale(0.98); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
         }
 
         .option-selector-group {
@@ -574,6 +702,7 @@
         .option-selected-text {
             color: var(--pink-dark);
             text-transform: none;
+            transition: color 0.2s ease;
         }
 
         .pill-grid {
@@ -593,13 +722,24 @@
             font-size: 12px;
             color: var(--dark);
             cursor: pointer;
-            transition: all .25s ease;
+            transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .pill-btn:hover {
+            border-color: var(--pink);
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+        }
+
+        .pill-btn:active {
+            transform: scale(0.95);
         }
 
         .pill-btn.active {
             background: var(--pink-dark);
             color: white;
             border-color: var(--pink-dark);
+            box-shadow: 0 4px 12px rgba(169, 101, 101, 0.3);
         }
 
         .quantity-control {
@@ -609,6 +749,11 @@
             border-radius: 10px;
             overflow: hidden;
             background: #fdfafa;
+            transition: border-color 0.2s ease;
+        }
+
+        .quantity-control:focus-within {
+            border-color: var(--pink-dark);
         }
 
         .qty-btn {
@@ -621,6 +766,16 @@
             font-weight: 600;
             color: var(--dark);
             cursor: pointer;
+            transition: background 0.2s ease, transform 0.1s ease;
+        }
+
+        .qty-btn:hover {
+            background: var(--pink-light);
+            color: var(--pink-dark);
+        }
+
+        .qty-btn:active {
+            transform: scale(0.9);
         }
 
         .qty-input {
@@ -656,12 +811,13 @@
             background: #fdfafa;
             outline: none;
             font-size: 13px;
-            transition: all .2s ease;
+            transition: all .25s ease;
         }
 
         .form-group-item input:focus {
             border-color: var(--pink-dark);
             background: white;
+            box-shadow: 0 4px 12px rgba(169, 101, 101, 0.12);
         }
 
         .order-summary {
@@ -671,6 +827,7 @@
             padding: 14px;
             margin: 18px 0;
             width: 100%;
+            transition: all 0.3s ease;
         }
 
         .order-summary h3 {
@@ -723,15 +880,22 @@
             color: white;
             font-size: 14px;
             cursor: pointer;
-            transition: background .25s ease;
+            transition: all .3s cubic-bezier(0.165, 0.84, 0.44, 1);
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
+            box-shadow: 0 4px 15px rgba(37, 166, 90, 0.25);
         }
 
         .next-step-button:hover, .order-button:hover {
             background: var(--green-dark);
+            transform: translateY(-2px) scale(1.01);
+            box-shadow: 0 8px 20px rgba(37, 166, 90, 0.35);
+        }
+
+        .next-step-button:active, .order-button:active {
+            transform: scale(0.97);
         }
 
         .back-step-btn {
@@ -746,6 +910,12 @@
             display: inline-flex;
             align-items: center;
             gap: 4px;
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        .back-step-btn:hover {
+            transform: translateX(-3px);
+            color: var(--dark);
         }
 
         .order-info {
@@ -768,16 +938,16 @@
             justify-content: space-between;
             align-items: center;
             z-index: 999;
-            box-shadow: 0 -4px 15px rgba(0,0,0,0.08);
+            box-shadow: 0 -6px 20px rgba(0,0,0,0.08);
             opacity: 1;
-            transform: translateY(0);
-            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+            transform: translateY(0) scale(1);
+            transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1), visibility 0.35s;
             visibility: visible;
         }
 
         .sticky-bottom-bar.hidden {
             opacity: 0;
-            transform: translateY(100%);
+            transform: translateY(100%) scale(0.95);
             pointer-events: none;
             visibility: hidden;
         }
@@ -809,11 +979,18 @@
             border-radius: 10px;
             font-size: 13px;
             cursor: pointer;
-            transition: background 0.2s ease;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 12px rgba(37, 166, 90, 0.3);
         }
 
         .sticky-order-btn:hover {
             background: var(--green-dark);
+            transform: translateY(-2px) scale(1.02);
+            box-shadow: 0 6px 16px rgba(37, 166, 90, 0.4);
+        }
+
+        .sticky-order-btn:active {
+            transform: scale(0.95);
         }
 
         footer {
@@ -872,10 +1049,15 @@
                 border-bottom: 1px solid var(--border);
                 box-shadow: 0 10px 20px rgba(0,0,0,0.08);
                 display: none;
+                opacity: 0;
+                transform: translateY(-10px) scale(0.98);
+                transition: all 0.3s ease;
             }
 
             .nav-links.active {
                 display: flex;
+                opacity: 1;
+                transform: translateY(0) scale(1);
             }
 
             .dropdown-content {
@@ -884,6 +1066,14 @@
                 border: none;
                 padding-left: 10px;
                 min-width: 100%;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                display: none;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
             }
 
             .detail-grid {
@@ -910,7 +1100,6 @@
                 padding: 16px 14px;
             }
 
-            /* UKURAN FONT SPESIFIK TABEL DI HP AGAR TAMPIL UTUH TANPA TERPOTONG */
             .size-table th {
                 font-size: 11px;
                 padding: 8px 3px;
@@ -927,7 +1116,7 @@
 
     <nav class="navbar">
         <div class="container nav-inner">
-            <a href="index.html" class="logo">
+            <a href="../index.html" class="logo">
                 <img src="../assets/icons/logo-dly.png" alt="DLY Wear Logo">
             </a>
 
@@ -946,7 +1135,7 @@
                     </div>
                 </div>
 
-                <a href="index.html#marketplace" class="nav-item">Toko Online</a>
+                <a href="../index.html#marketplace" class="nav-item">Toko Online</a>
             </div>
         </div>
     </nav>
@@ -955,7 +1144,7 @@
         <div class="container">
             
             <div class="breadcrumb">
-                <a href="index.html">Beranda</a> / <a href="index.html#katalog">Katalog</a> / <span>DLY Lunar Mermaid Skirt</span>
+                <a href="../index.html">Beranda</a> / <a href="../index.html#katalog">Katalog</a> / <span>DLY Lunar Mermaid Skirt</span>
             </div>
 
             <div class="detail-grid">
@@ -1449,9 +1638,9 @@
             const pesan = 
 `Halo DLY Wear 👋
 
-Saya ingin melakukan pemesanan:
+Saya mau pesan produk ini:
 
-🛍️ *RICIAN PEMESANAN*
+🛍️ *DETAIL PRODUK*
 • Nama Produk: DLY Lunar Mermaid Skirt Scuba Premium
 • Ukuran: ${selectedSize}
 • Warna: ${selectedColor}
@@ -1471,7 +1660,7 @@ Saya ingin melakukan pemesanan:
 
 Mohon bantuannya untuk instruksi pembayaran ya. Terima kasih 😊`;
 
-            const url = "https://wa.me/" + 6287731427304 + "?text=" + encodeURIComponent(pesan);
+            const url = "https://wa.me/" + nomorWhatsApp + "?text=" + encodeURIComponent(pesan);
             window.open(url, "_blank");
         });
 
