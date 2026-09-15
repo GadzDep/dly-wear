@@ -2,35 +2,33 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     <title>DLY Lunar Mermaid Skirt Wanita Scuba Premium — DLY Wear</title>
 
-    <meta name="description" content="Beli DLY Lunar Mermaid Skirt Wanita Scuba Premium. Bahan tebal, melar, dan elegan. Gratis Ongkir & Promo Terbatas!">
+    <meta name="description" content="Beli DLY Lunar Mermaid Skirt Wanita Scuba Premium. Bahan tebal, stretch, melar, dan elegan. Gratis Ongkir & Promo Terbatas!">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
     <style>
-        /* =========================================
-           RESET & CSS VARIABLES
-        ========================================= */
-        * {
+        *, *::before, *::after {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+            box-sizing: border-box !important;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'DM Sans', sans-serif;
+        html, body {
+            width: 100%;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden !important;
             background: #fcf9f7;
             color: #292323;
-            overflow-x: hidden;
+            font-family: 'DM Sans', sans-serif;
+            -webkit-text-size-adjust: 100%;
         }
 
         a {
@@ -38,8 +36,14 @@
             color: inherit;
         }
 
-        button, input, select {
+        button, input, select, textarea {
             font-family: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
         }
 
         :root {
@@ -56,21 +60,23 @@
         }
 
         .container {
-            width: min(100% - 36px, 1100px);
-            margin: auto;
+            width: 100%;
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 16px;
+            padding-right: 16px;
         }
 
-        /* =========================================
-           NAVBAR WITH DROPDOWN
-        ========================================= */
         .navbar {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            z-index: 100;
-            padding: 16px 0;
-            background: rgba(252, 249, 247, 0.95);
+            height: 60px;
+            z-index: 1000;
+            padding: 0;
+            background: rgba(252, 249, 247, 0.96);
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border);
         }
@@ -79,19 +85,25 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            height: 100%;
         }
 
         .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 24px;
-            font-weight: 700;
-            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+
+        .logo img {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
         }
 
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 25px;
+            gap: 20px;
         }
 
         .nav-item {
@@ -107,7 +119,6 @@
 
         .dropdown {
             position: relative;
-            display: inline-block;
         }
 
         .dropdown-btn {
@@ -117,12 +128,7 @@
             font-weight: 600;
             color: var(--dark);
             cursor: pointer;
-            padding: 5px 0;
-            transition: color .3s ease;
-        }
-
-        .dropdown-btn:hover {
-            color: var(--pink-dark);
+            padding: 4px 0;
         }
 
         .dropdown-content {
@@ -131,22 +137,20 @@
             top: 100%;
             left: 0;
             background-color: white;
-            min-width: 220px;
+            min-width: 200px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             border-radius: 12px;
             border: 1px solid var(--border);
             padding: 8px 0;
-            z-index: 110;
+            z-index: 1100;
         }
 
         .dropdown-content a {
             color: var(--dark);
-            padding: 10px 18px;
-            text-decoration: none;
+            padding: 10px 16px;
             display: block;
             font-size: 13px;
             font-weight: 500;
-            transition: background .2s ease, color .2s ease;
         }
 
         .dropdown-content a:hover {
@@ -158,18 +162,28 @@
             display: block;
         }
 
-        /* =========================================
-           PRODUCT DETAIL LAYOUT
-        ========================================= */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--dark);
+            cursor: pointer;
+            padding: 4px;
+        }
+
         .product-detail-section {
-            padding-top: 110px;
-            padding-bottom: 70px;
+            padding-top: 80px;
+            padding-bottom: 80px;
+            width: 100%;
         }
 
         .breadcrumb {
             font-size: 12px;
             color: var(--soft-dark);
-            margin-bottom: 25px;
+            margin-bottom: 18px;
+            line-height: 1.5;
+            word-break: break-word;
         }
 
         .breadcrumb a {
@@ -180,56 +194,72 @@
         .detail-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            gap: 36px;
             align-items: start;
+            width: 100%;
         }
 
-        /* Gallery Container & Animated Color Name Toast */
         .gallery-container {
             position: sticky;
-            top: 100px;
+            top: 80px;
+            width: 100%;
         }
 
         .image-wrapper {
             position: relative;
             width: 100%;
-            border-radius: 20px;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 15px 35px rgba(70,45,45,.06);
             border: 1px solid var(--border);
+            background: #ffffff;
+            box-shadow: 0 10px 25px rgba(70,45,45,.05);
+            touch-action: pan-y;
         }
 
-        .main-image {
+        .main-image-slider {
+            display: flex;
             width: 100%;
-            height: 480px;
-            object-fit: cover;
-            display: block;
-            transition: opacity .25s ease;
+            aspect-ratio: 1 / 1;
+            height: auto;
+            overflow: hidden;
+            user-select: none;
         }
 
-        /* Color Toast Badge overlay */
+        .main-image-slider .slide-item {
+            min-width: 100%;
+            width: 100%;
+            height: 100%;
+            flex-shrink: 0;
+            transition: transform 0.3s ease-out;
+        }
+
+        .main-image-slider img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            pointer-events: none;
+        }
+
         .color-toast {
             position: absolute;
-            bottom: 18px;
-            left: 18px;
+            bottom: 14px;
+            left: 14px;
             background: rgba(41, 35, 35, 0.88);
             color: #ffffff;
             backdrop-filter: blur(8px);
             border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 8px 16px;
+            padding: 6px 14px;
             border-radius: 100px;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 600;
-            letter-spacing: 0.5px;
             display: flex;
             align-items: center;
             gap: 6px;
             opacity: 0;
             transform: translateY(10px);
             pointer-events: none;
-            transition: opacity 0.35s ease, transform 0.35s ease;
+            transition: all 0.35s ease;
             z-index: 10;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
         }
 
         .color-toast.show {
@@ -238,52 +268,59 @@
         }
 
         .color-toast-dot {
-            width: 8px;
-            height: 8px;
+            width: 7px;
+            height: 7px;
             border-radius: 50%;
             background-color: var(--pink);
-            display: inline-block;
         }
 
         .thumbnail-list {
             display: flex;
-            gap: 10px;
-            margin-top: 14px;
+            gap: 8px;
+            margin-top: 10px;
             overflow-x: auto;
-            padding-bottom: 5px;
+            padding-top: 6px;
+            padding-bottom: 6px;
+            width: 100%;
+            -webkit-overflow-scrolling: touch;
         }
 
         .thumb-img {
-            width: 70px;
-            height: 70px;
+            width: 65px;
+            height: 65px;
             object-fit: cover;
             border-radius: 10px;
             border: 2px solid transparent;
             cursor: pointer;
-            transition: .25s ease;
+            flex-shrink: 0;
+            transition: border-color .2s ease, transform .2s ease;
         }
 
-        .thumb-img.active, .thumb-img:hover {
-            border-color: var(--pink-dark);
-            transform: translateY(-2px);
+        .thumb-img.active {
+            border-color: var(--pink-dark) !important;
         }
 
-        /* Product Information */
+        .detail-info {
+            width: 100%;
+        }
+
         .detail-info .product-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(24px, 5vw, 32px);
-            line-height: 1.2;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: clamp(20px, 3.5vw, 26px);
+            line-height: 1.35;
             color: var(--dark);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
+            word-wrap: break-word;
         }
 
         .detail-rating {
             display: flex;
             align-items: center;
-            gap: 8px;
-            font-size: 14px;
+            gap: 6px;
+            font-size: 13px;
             color: #f39c12;
-            margin-bottom: 18px;
+            margin-bottom: 16px;
         }
 
         .detail-rating span {
@@ -291,43 +328,35 @@
             font-size: 12px;
         }
 
-        /* Price Box */
         .price-box {
             background: #fdf6f5;
             border: 1px solid var(--border);
-            padding: 16px 20px;
+            padding: 16px;
             border-radius: 16px;
-            margin-bottom: 25px;
+            margin-bottom: 22px;
+            width: 100%;
         }
 
         .price-label-row {
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 6px;
+            gap: 8px;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
         }
 
-        .badge-promo {
-            background: #e74c3c;
+        .badge-promo, .badge-ongkir {
             color: white;
             font-size: 10px;
             font-weight: 700;
             padding: 4px 10px;
             border-radius: 50px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
 
-        .badge-ongkir {
-            background: #27ae60;
-            color: white;
-            font-size: 10px;
-            font-weight: 700;
-            padding: 4px 10px;
-            border-radius: 50px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+        .badge-promo { background: #e74c3c; }
+        .badge-ongkir { background: #27ae60; }
 
         .price-wrapper {
             display: flex;
@@ -337,15 +366,17 @@
         }
 
         .original-price {
-            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            font-size: 15px;
             color: #95a5a6;
             text-decoration: line-through;
-            font-weight: 500;
         }
 
         .discount-price {
-            font-size: 28px;
-            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 26px;
             color: var(--pink-dark);
         }
 
@@ -353,97 +384,182 @@
             font-size: 11px;
             color: #c0392b;
             font-weight: 700;
+            margin-top: 4px;
+            display: block;
         }
 
-        /* Description & Size Chart */
         .description-box, .size-chart-box {
-            margin-bottom: 30px;
+            margin-bottom: 24px;
+            width: 100%;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
         }
 
         .description-box h3, .size-chart-box h3 {
-            font-size: 16px;
-            font-weight: 700;
+            font-family: 'Poppins', sans-serif;
+            font-size: 15px;
+            font-weight: 600;
             margin-bottom: 10px;
             border-bottom: 2px solid var(--pink-light);
-            padding-bottom: 6px;
+            padding-bottom: 4px;
             display: inline-block;
         }
 
-        .description-box p, .description-box ul {
+        .description-box p {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
             font-size: 13px;
             color: var(--soft-dark);
-            line-height: 1.8;
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .description-subheading {
+            font-family: 'Poppins', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--dark);
+            margin-top: 14px;
+            margin-bottom: 6px;
         }
 
         .description-box ul {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            font-size: 13px;
+            color: var(--soft-dark);
+            line-height: 1.7;
             padding-left: 18px;
-            margin-top: 8px;
+            margin-bottom: 12px;
         }
 
         .table-responsive {
             width: 100%;
+            max-width: 100%;
             overflow-x: auto;
-            border-radius: 14px;
+            border-radius: 12px;
             border: 1px solid var(--border);
+            -webkit-overflow-scrolling: touch;
         }
 
+        /* PERBAIKAN TABEL AGAR RESPONSIVITAS 100% DI HP */
         .size-table {
             width: 100%;
             border-collapse: collapse;
             background: white;
             font-size: 12px;
             text-align: center;
+            table-layout: fixed;
         }
 
         .size-table th {
             background: var(--dark);
             color: white;
-            padding: 12px;
+            padding: 10px 4px;
             font-weight: 600;
+            word-break: break-word;
         }
 
         .size-table td {
-            padding: 12px;
+            padding: 10px 4px;
             border-bottom: 1px solid var(--border);
             color: var(--soft-dark);
+            word-break: break-word;
         }
 
-        .size-table tr:last-child td {
-            border-bottom: none;
+        .size-note-box {
+            background: #fdfafa;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 12px 14px;
+            margin-top: 10px;
         }
 
-        .size-note {
+        .size-note-box p {
+            font-family: 'Poppins', sans-serif;
             font-size: 11px;
-            color: #857777;
-            margin-top: 8px;
-            font-style: italic;
+            font-weight: 400;
+            color: #756868;
+            line-height: 1.6;
+            margin-bottom: 4px;
         }
 
-        /* =========================================
-           FORM PEMBELIAN RAPI & STYLED
-        ========================================= */
+        .size-note-box p:last-child {
+            margin-bottom: 0;
+        }
+
         .detail-order-card {
             background: white;
             border: 1px solid var(--border);
-            border-radius: 24px;
-            padding: 28px;
-            box-shadow: 0 18px 45px rgba(60,40,40,.07);
+            border-radius: 18px;
+            padding: 22px 18px;
+            box-shadow: 0 12px 30px rgba(60,40,40,.05);
+            width: 100%;
         }
 
-        .detail-order-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 22px;
-            margin-bottom: 6px;
+        .step-progress-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 12px;
         }
 
-        .detail-order-card .sub-title {
+        .step-tab {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 700;
+            color: #b0a3a0;
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+
+        .step-tab.active {
+            color: var(--pink-dark);
+        }
+
+        .step-badge {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: #e6dedb;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .step-tab.active .step-badge {
+            background: var(--pink-dark);
+        }
+
+        .step-divider {
+            color: var(--border);
             font-size: 12px;
-            color: var(--soft-dark);
-            margin-bottom: 22px;
+        }
+
+        .form-step {
+            display: none;
+        }
+
+        .form-step.active {
+            display: block;
+            animation: fadeInStep 0.3s ease;
+        }
+
+        @keyframes fadeInStep {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .option-selector-group {
-            margin-bottom: 20px;
+            margin-bottom: 16px;
+            width: 100%;
         }
 
         .option-label {
@@ -451,134 +567,116 @@
             justify-content: space-between;
             font-size: 12px;
             font-weight: 700;
-            color: var(--dark);
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
         .option-selected-text {
             color: var(--pink-dark);
-            font-weight: 600;
             text-transform: none;
         }
 
         .pill-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 8px;
+            width: 100%;
         }
 
         .pill-btn {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
             background: #fdfafa;
             border: 1.5px solid var(--border);
-            border-radius: 12px;
-            padding: 10px 16px;
-            font-size: 13px;
-            font-weight: 600;
+            border-radius: 10px;
+            padding: 8px 12px;
+            font-size: 12px;
             color: var(--dark);
             cursor: pointer;
             transition: all .25s ease;
-            user-select: none;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .pill-btn:hover {
-            border-color: var(--pink);
-            background: white;
         }
 
         .pill-btn.active {
             background: var(--pink-dark);
             color: white;
             border-color: var(--pink-dark);
-            box-shadow: 0 6px 15px rgba(169,101,101,.25);
         }
 
         .quantity-control {
             display: inline-flex;
             align-items: center;
             border: 1.5px solid var(--border);
-            border-radius: 12px;
+            border-radius: 10px;
             overflow: hidden;
             background: #fdfafa;
         }
 
         .qty-btn {
-            width: 38px;
-            height: 38px;
+            font-family: 'Poppins', sans-serif;
+            width: 36px;
+            height: 36px;
             background: none;
             border: none;
             font-size: 16px;
-            font-weight: 700;
+            font-weight: 600;
             color: var(--dark);
             cursor: pointer;
-            transition: background .2s ease;
-        }
-
-        .qty-btn:hover {
-            background: var(--pink-light);
-            color: var(--pink-dark);
         }
 
         .qty-input {
-            width: 45px;
-            height: 38px;
+            width: 42px;
+            height: 36px;
             border: none;
             background: none;
             text-align: center;
             font-size: 14px;
             font-weight: 700;
-            color: var(--dark);
             outline: none;
+            color: var(--dark);
         }
 
-        /* Form Inputs Styling */
         .form-group-item {
-            margin-bottom: 18px;
+            margin-bottom: 14px;
+            width: 100%;
         }
 
         .form-group-item label {
             display: block;
             font-size: 12px;
             font-weight: 700;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             color: var(--dark);
         }
 
         .form-group-item input {
             width: 100%;
-            padding: 14px 16px;
+            padding: 12px 14px;
             border: 1.5px solid #e4d9d6;
-            border-radius: 12px;
+            border-radius: 10px;
             background: #fdfafa;
             outline: none;
             font-size: 13px;
-            transition: all .25s ease;
+            transition: all .2s ease;
         }
 
         .form-group-item input:focus {
             border-color: var(--pink-dark);
             background: white;
-            box-shadow: 0 0 0 4px rgba(201,135,135,.12);
         }
 
-        /* Order Summary Box */
         .order-summary {
             background: #fcf6f5;
             border: 1px dashed var(--pink-dark);
-            border-radius: 16px;
-            padding: 18px;
-            margin: 22px 0;
+            border-radius: 14px;
+            padding: 14px;
+            margin: 18px 0;
+            width: 100%;
         }
 
         .order-summary h3 {
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 700;
-            color: var(--dark);
-            margin-bottom: 12px;
+            margin-bottom: 8px;
             padding-bottom: 6px;
             border-bottom: 1px solid var(--border);
         }
@@ -586,7 +684,7 @@
         .summary-item {
             display: flex;
             justify-content: space-between;
-            font-size: 13px;
+            font-size: 12px;
             color: var(--soft-dark);
             margin-bottom: 8px;
         }
@@ -600,62 +698,137 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 700;
-            color: var(--dark);
-            margin-top: 12px;
+            margin-top: 10px;
             padding-top: 10px;
             border-top: 1px solid var(--border);
         }
 
         .total-price {
-            font-size: 18px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 17px;
             color: var(--pink-dark);
         }
 
-        .order-button {
+        .next-step-button, .order-button {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
             width: 100%;
             border: none;
-            border-radius: 14px;
-            padding: 16px;
+            border-radius: 12px;
+            padding: 14px;
             background: var(--green);
             color: white;
-            font-size: 15px;
-            font-weight: 700;
+            font-size: 14px;
             cursor: pointer;
-            transition: all .3s ease;
+            transition: background .25s ease;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
         }
 
-        .order-button:hover {
+        .next-step-button:hover, .order-button:hover {
             background: var(--green-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 12px 25px rgba(37,166,90,.25);
+        }
+
+        .back-step-btn {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            background: none;
+            border: none;
+            color: var(--pink-dark);
+            font-size: 12px;
+            cursor: pointer;
+            margin-bottom: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
         }
 
         .order-info {
             text-align: center;
-            margin-top: 14px;
+            margin-top: 12px;
             font-size: 11px;
             color: #857777;
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
-        /* Footer */
+        .sticky-bottom-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #ffffff;
+            border-top: 1px solid var(--border);
+            padding: 10px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 999;
+            box-shadow: 0 -4px 15px rgba(0,0,0,0.08);
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+            visibility: visible;
+        }
+
+        .sticky-bottom-bar.hidden {
+            opacity: 0;
+            transform: translateY(100%);
+            pointer-events: none;
+            visibility: hidden;
+        }
+
+        .sticky-price-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sticky-label {
+            font-size: 10px;
+            color: var(--soft-dark);
+        }
+
+        .sticky-price {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            color: var(--pink-dark);
+        }
+
+        .sticky-order-btn {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            background: var(--green);
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 10px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .sticky-order-btn:hover {
+            background: var(--green-dark);
+        }
+
         footer {
-            padding: 35px 20px;
+            padding: 25px 16px;
             background: #292323;
             color: white;
             text-align: center;
+            width: 100%;
+            padding-bottom: 80px;
         }
 
         .footer-logo {
             font-family: 'Playfair Display', serif;
-            font-size: 25px;
-            margin-bottom: 8px;
+            font-size: 22px;
+            margin-bottom: 6px;
         }
 
         footer p {
@@ -663,22 +836,89 @@
             font-size: 11px;
         }
 
-        /* Responsive Breakpoints */
-        @media (max-width: 850px) {
+        @media screen and (min-width: 851px) {
+            .sticky-bottom-bar {
+                display: none !important;
+            }
+            .product-detail-section {
+                padding-bottom: 50px;
+            }
+            footer {
+                padding-bottom: 25px;
+            }
+        }
+
+        @media screen and (max-width: 850px) {
+            .container {
+                padding-left: 16px;
+                padding-right: 16px;
+                width: 100%;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #ffffff;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 16px 20px;
+                gap: 12px;
+                border-bottom: 1px solid var(--border);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .dropdown-content {
+                position: static;
+                box-shadow: none;
+                border: none;
+                padding-left: 10px;
+                min-width: 100%;
+            }
+
             .detail-grid {
-                grid-template-columns: 1fr;
-                gap: 25px;
+                display: block;
+                width: 100%;
             }
 
             .gallery-container {
                 position: static;
+                width: 100%;
+                margin-bottom: 24px;
             }
 
-            .main-image {
+            .main-image-slider {
+                aspect-ratio: 1 / 1;
+                height: auto;
+            }
+
+            .detail-info {
                 width: 100%;
-                aspect-ratio: 4 / 5;
-                object-fit: cover;
-                display: block;
+            }
+
+            .detail-order-card {
+                padding: 16px 14px;
+            }
+
+            /* UKURAN FONT SPESIFIK TABEL DI HP AGAR TAMPIL UTUH TANPA TERPOTONG */
+            .size-table th {
+                font-size: 11px;
+                padding: 8px 3px;
+            }
+
+            .size-table td {
+                font-size: 11px;
+                padding: 8px 3px;
             }
         }
     </style>
@@ -687,9 +927,13 @@
 
     <nav class="navbar">
         <div class="container nav-inner">
-            <a href="index.html" class="logo">DLY Wear</a>
+            <a href="index.html" class="logo">
+                <img src="../assets/icons/logo-dly.png" alt="DLY Wear Logo">
+            </a>
 
-            <div class="nav-links">
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Buka Menu">☰</button>
+
+            <div class="nav-links" id="navLinks">
                 <a href="../index.html#beranda" class="nav-item">Beranda</a>
                 
                 <div class="dropdown">
@@ -710,26 +954,31 @@
     <section class="section product-detail-section">
         <div class="container">
             
-            <!-- Breadcrumb Navigation -->
             <div class="breadcrumb">
                 <a href="index.html">Beranda</a> / <a href="index.html#katalog">Katalog</a> / <span>DLY Lunar Mermaid Skirt</span>
             </div>
 
             <div class="detail-grid">
 
-                <!-- GALLERY CONTAINER & MAIN IMAGE WITH FLOATING TOAST -->
+                <!-- GALLERY CONTAINER WITH 1-BY-1 STRICT TOUCH SLIDER (1:1 RATIO) -->
                 <div class="gallery-container">
-                    <div class="image-wrapper">
-                        <img id="mainDisplayImage" src="https://down-id.img.susercontent.com/file/id-11134207-822wq-mni5vw7p8hkw25.webp" alt="DLY Lunar Mermaid Skirt" class="main-image">
+                    <div class="image-wrapper" id="imageWrapper">
+                        <div class="main-image-slider" id="mainImageSlider">
+                            <div class="slide-item"><img src="../assets/images/mermaid-hitam-maxi.jpg" alt="Hitam Maxi" data-color="Hitam Maxi"></div>
+                            <div class="slide-item"><img src="../assets/images/mermaid-putih-maxi.jpg" alt="Putih Maxi" data-color="Putih Maxi"></div>
+                            <div class="slide-item"><img src="../assets/images/mermaid-ivory-maxi.jpg" alt="Ivory Maxi" data-color="Ivory Maxi"></div>
+                            <div class="slide-item"><img src="../assets/images/mermaid-cream-maxi.jpg" alt="Cream Maxi" data-color="Cream Maxi"></div>
+                            <div class="slide-item"><img src="../assets/images/mermaid-moca-maxi.jpg" alt="Moca Maxi" data-color="Moca Maxi"></div>
+                            <div class="slide-item"><img src="../assets/images/mermaid-cream-midi.jpg" alt="Cream Midi" data-color="Cream Midi"></div>
+                        </div>
                         
-                        <!-- Animated Color Name Toast Overlay -->
                         <div class="color-toast" id="colorToast">
                             <span class="color-toast-dot"></span>
                             <span id="toastColorText">Varian: Hitam Maxi</span>
                         </div>
                     </div>
 
-                    <div class="thumbnail-list">
+                    <div class="thumbnail-list" id="thumbnailList">
                         <img src="../assets/images/mermaid-hitam-maxi.jpg" alt="Hitam Maxi" class="thumb-img active" onclick="selectColorFromThumb(this, 'Hitam Maxi')">
                         <img src="../assets/images/mermaid-putih-maxi.jpg" alt="Putih Maxi" class="thumb-img" onclick="selectColorFromThumb(this, 'Putih Maxi')">
                         <img src="../assets/images/mermaid-ivory-maxi.jpg" alt="Ivory Maxi" class="thumb-img" onclick="selectColorFromThumb(this, 'Ivory Maxi')">
@@ -739,7 +988,7 @@
                     </div>
                 </div>
 
-                <!-- PRODUCT DETAILS & ORDER FORM -->
+                <!-- PRODUCT DETAILS & ORDER FORM (2-STEP) -->
                 <div class="detail-info">
                     
                     <h1 class="product-title">DLY Lunar Mermaid Skirt Wanita Scuba Premium</h1>
@@ -748,7 +997,6 @@
                         ★★★★★ <span>5.0 (128 Ulasan Terjual)</span>
                     </div>
 
-                    <!-- Price Box with Strike-through original price -->
                     <div class="price-box">
                         <div class="price-label-row">
                             <span class="badge-promo">🔥 PROMO SPESIAL</span>
@@ -761,21 +1009,46 @@
                         <span class="save-tag">Hemat Rp 150.000 (Diskon 60%)</span>
                     </div>
 
-                    <!-- Description Box -->
+                    <!-- DESKRIPSI PRODUK (POPPINS 400) -->
                     <div class="description-box">
                         <h3>Deskripsi Produk</h3>
                         <p>
-                            <strong>DLY Lunar Mermaid Skirt</strong> dirancang dengan potongan duyung (mermaid) yang anggun dan memberikan ilusi jenjang pada tubuh. Menggunakan bahan Scuba Premium berkepadatan tinggi yang lembut, tebal, tidak menerawang, serta sangat elastis sehingga memberikan kenyamanan maksimal untuk pemakaian seharian.
+                            <strong>DLY Lunar Mermaid Skirt</strong> adalah rok wanita model mermaid berbahan scuba premium yang nyaman dipakai untuk tampilan formal maupun daily wear. Bahannya stretch, jatuh, tidak mudah kusut, dan mengikuti bentuk tubuh sehingga memberikan kesan rapi, feminin, dan elegant.
                         </p>
+
+                        <div class="description-subheading">✨ Keunggulan Produk:</div>
                         <ul>
-                            <li><strong>Material:</strong> Premium Scuba (Tebal, Stretch, Halus & jatuh memikat)</li>
-                            <li><strong>Model:</strong> Highwaist Mermaid Skirt dengan pinggang karet elastis</li>
-                            <li><strong>Jahitan:</strong> Rapi standar butik kelas atas</li>
-                            <li><strong>Cocok untuk:</strong> Acara formal, pesta, kondangan, maupun outfit kerja elegan</li>
+                            <li>Bahan scuba premium yang stretch dan nyaman dipakai</li>
+                            <li>Model mermaid skirt dengan tampilan feminin dan elegant</li>
+                            <li>Fit body, mengikuti bentuk tubuh dengan tetap nyaman</li>
+                            <li>Karet pinggang melingkar sehingga lebih fleksibel saat dipakai</li>
+                            <li>Bahan tidak mudah kusut dan cocok untuk aktivitas harian</li>
+                            <li>Mudah dipadukan dengan blouse, kemeja, tunik, outer, atau atasan basic</li>
+                            <li>Cocok untuk kerja, kuliah, acara formal, hangout, atau daily outfit</li>
+                        </ul>
+
+                        <div class="description-subheading">📌 Detail Spesifikasi:</div>
+                        <ul>
+                            <li><strong>Brand:</strong> DLY Wear</li>
+                            <li><strong>Bahan:</strong> Scuba Premium</li>
+                            <li><strong>Fit & Model:</strong> Fit Body (Model Mermaid Skirt / Rok Span)</li>
+                            <li><strong>Pinggang:</strong> Karet Melingkar Flexibel</li>
+                            <li><strong>Karakter Bahan:</strong> Stretch, flowy/jatuh, tidak mudah kusut, adem dipakai</li>
+                            <li><strong>Pilihan Panjang:</strong> Maxi dan Midi</li>
+                            <li><strong>Kegunaan:</strong> Formal wear, daily wear, kerja, kuliah, casual, semi-formal</li>
+                        </ul>
+
+                        <div class="description-subheading">💃 Cocok Untuk:</div>
+                        <ul>
+                            <li>Wanita yang mencari rok rapi untuk kerja atau acara formal</li>
+                            <li>Pengguna yang suka tampilan feminin, elegant, dan fit body</li>
+                            <li>Dipadukan dengan kemeja, blouse, tunik, outer, atau atasan polos</li>
+                            <li>Outfit kantor, kuliah, hangout, kondangan santai, atau daily wear</li>
+                            <li>Pengguna hijab maupun non-hijab dengan menyesuaikan style masing-masing</li>
                         </ul>
                     </div>
 
-                    <!-- Size Chart Table -->
+                    <!-- PANDUAN UKURAN / SIZE CHART -->
                     <div class="size-chart-box">
                         <h3>Panduan Ukuran (Size Chart)</h3>
                         <div class="table-responsive">
@@ -784,126 +1057,161 @@
                                     <tr>
                                         <th>Ukuran</th>
                                         <th>Lingkar Pinggang</th>
-                                        <th>Lingkar Pinggul</th>
-                                        <th>Panjang Skirt</th>
-                                        <th>Estimasi BB</th>
+                                        <th>Panjang Maxi</th>
+                                        <th>Panjang Midi</th>
+                                        <th>Rekomendasi BB</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td><strong>Fit to S-M</strong></td>
-                                        <td>60 - 82 cm</td>
-                                        <td>84 - 98 cm</td>
-                                        <td>92 cm</td>
-                                        <td>40 - 55 kg</td>
+                                        <td><strong>Fit S-M</strong></td>
+                                        <td>62 – 85 cm</td>
+                                        <td>100 cm</td>
+                                        <td>85 cm</td>
+                                        <td>40 – 58 kg</td>
                                     </tr>
                                     <tr>
-                                        <td><strong>Fit to L-XL</strong></td>
-                                        <td>70 - 95 cm</td>
-                                        <td>94 - 110 cm</td>
-                                        <td>94 cm</td>
-                                        <td>56 - 72 kg</td>
+                                        <td><strong>Fit L-XL</strong></td>
+                                        <td>78 – 100 cm</td>
+                                        <td>100 cm</td>
+                                        <td>85 cm</td>
+                                        <td>58 – 83 kg</td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
-                        <p class="size-note">*Toleransi ukuran 1-2 cm karena sifat bahan scuba yang melar.</p>
+
+                        <!-- CATATAN PENTING -->
+                        <div class="size-note-box">
+                            <p><strong>💡 Catatan Penting:</strong></p>
+                            <p>• Warna produk dapat sedikit berbeda karena pencahayaan foto dan pengaturan layar.</p>
+                            <p>• Mohon cek detail ukuran sebelum membeli (Toleransi ukuran 1–3 cm karena pengukuran manual).</p>
+                            <p>• Rekomendasi berat badan hanya perkiraan, tetap sesuaikan dengan lingkar pinggang dan kenyamanan masing-masing.</p>
+                            <p>• Stok dan promo dapat berubah sewaktu-waktu.</p>
+                        </div>
                     </div>
 
-                    <!-- ORDER FORM CARD -->
+                    <!-- CARD FORM PEMESANAN DENGAN SISTEM 2 STEP -->
                     <div class="detail-order-card" id="formPemesanan">
-                        <h3>Pilih Varian & Pesan</h3>
-                        <p class="sub-title">Silakan tentukan pilihan varian dan isi data pengiriman kamu.</p>
+                        
+                        <!-- TAB HEADER STEP -->
+                        <div class="step-progress-header">
+                            <div class="step-tab active" id="tabStep1" onclick="goToFormStep(1)">
+                                <span class="step-badge">1</span>
+                                <span>Pilih Varian</span>
+                            </div>
+                            <span class="step-divider">❯</span>
+                            <div class="step-tab" id="tabStep2" onclick="goToFormStep(2)">
+                                <span class="step-badge">2</span>
+                                <span>Data Pengiriman</span>
+                            </div>
+                        </div>
 
                         <form id="skirtOrderForm">
 
-                            <!-- SIZE SELECTOR (BUTTON PILLS) -->
-                            <div class="option-selector-group">
-                                <div class="option-label">
-                                    <span>Pilih Ukuran:</span>
-                                    <span class="option-selected-text" id="selectedSizeLabel">Fit to S-M</span>
+                            <!-- LANGKAH 1: PILIH VARIAN PRODUK -->
+                            <div class="form-step active" id="step1Content">
+
+                                <div class="option-selector-group">
+                                    <div class="option-label">
+                                        <span>Pilih Ukuran:</span>
+                                        <span class="option-selected-text" id="selectedSizeLabel">Fit S-M</span>
+                                    </div>
+                                    <div class="pill-grid" id="sizePillGrid">
+                                        <div class="pill-btn active" onclick="selectSize(this, 'Fit S-M')">Fit S-M</div>
+                                        <div class="pill-btn" onclick="selectSize(this, 'Fit L-XL')">Fit L-XL</div>
+                                    </div>
                                 </div>
-                                <div class="pill-grid" id="sizePillGrid">
-                                    <div class="pill-btn active" onclick="selectSize(this, 'Fit to S-M')">Fit to S-M</div>
-                                    <div class="pill-btn" onclick="selectSize(this, 'Fit to L-XL')">Fit to L-XL</div>
+
+                                <div class="option-selector-group">
+                                    <div class="option-label">
+                                        <span>Pilih Warna:</span>
+                                        <span class="option-selected-text" id="selectedColorLabel">Hitam Maxi</span>
+                                    </div>
+                                    <div class="pill-grid" id="colorPillGrid">
+                                        <div class="pill-btn active" onclick="selectColorPill(this, 'Hitam Maxi')">Hitam Maxi</div>
+                                        <div class="pill-btn" onclick="selectColorPill(this, 'Putih Maxi')">Putih Maxi</div>
+                                        <div class="pill-btn" onclick="selectColorPill(this, 'Ivory Maxi')">Ivory Maxi</div>
+                                        <div class="pill-btn" onclick="selectColorPill(this, 'Cream Maxi')">Cream Maxi</div>
+                                        <div class="pill-btn" onclick="selectColorPill(this, 'Moca Maxi')">Moca Maxi</div>
+                                        <div class="pill-btn" onclick="selectColorPill(this, 'Cream Midi')">Cream Midi</div>
+                                    </div>
                                 </div>
+
+                                <div class="option-selector-group">
+                                    <div class="option-label">
+                                        <span>Jumlah Produk:</span>
+                                    </div>
+                                    <div class="quantity-control">
+                                        <button type="button" class="qty-btn" onclick="changeQty(-1)">-</button>
+                                        <input type="number" id="skirtJumlah" class="qty-input" value="1" min="1" readonly>
+                                        <button type="button" class="qty-btn" onclick="changeQty(1)">+</button>
+                                    </div>
+                                </div>
+
+                                <button type="button" class="next-step-button" onclick="goToFormStep(2)">
+                                    Lanjut ke Data Pengiriman ➔
+                                </button>
                             </div>
 
-                            <!-- COLOR SELECTOR (BUTTON PILLS) -->
-                            <div class="option-selector-group">
-                                <div class="option-label">
-                                    <span>Pilih Warna:</span>
-                                    <span class="option-selected-text" id="selectedColorLabel">Hitam Maxi</span>
+                            <!-- LANGKAH 2: DATA PENGIRIMAN & SUMMARY -->
+                            <div class="form-step" id="step2Content">
+                                
+                                <button type="button" class="back-step-btn" onclick="goToFormStep(1)">
+                                    ← Ubah Pilihan Varian
+                                </button>
+
+                                <div class="form-group-item">
+                                    <label for="buyerName">Nama Lengkap</label>
+                                    <input type="text" id="buyerName" placeholder="Masukkan nama penerima">
                                 </div>
-                                <div class="pill-grid" id="colorPillGrid">
-                                    <div class="pill-btn active" onclick="selectColorPill(this, 'Hitam Maxi')">Hitam Maxi</div>
-                                    <div class="pill-btn" onclick="selectColorPill(this, 'Putih Maxi')">Putih Maxi</div>
-                                    <div class="pill-btn" onclick="selectColorPill(this, 'Ivory Maxi')">Ivory Maxi</div>
-                                    <div class="pill-btn" onclick="selectColorPill(this, 'Cream Maxi')">Cream Maxi</div>
-                                    <div class="pill-btn" onclick="selectColorPill(this, 'Moca Maxi')">Moca Maxi</div>
-                                    <div class="pill-btn" onclick="selectColorPill(this, 'Cream Midi')">Cream Midi</div>
+
+                                <div class="form-group-item">
+                                    <label for="buyerWa">No. WhatsApp</label>
+                                    <input type="tel" id="buyerWa" placeholder="08xxxxxxxxxx">
                                 </div>
+
+                                <div class="form-group-item">
+                                    <label for="buyerCity">Kota / Kecamatan</label>
+                                    <input type="text" id="buyerCity" placeholder="Contoh: Kec. Menteng, Jakarta Pusat">
+                                </div>
+
+                                <div class="form-group-item">
+                                    <label for="buyerAddress">Alamat Lengkap</label>
+                                    <input type="text" id="buyerAddress" placeholder="Jalan, No. Rumah, RT/RW, Kelurahan">
+                                </div>
+
+                                <div class="order-summary">
+                                    <h3>Rincian Pembelian</h3>
+                                    <div class="summary-item">
+                                        <span>Produk:</span>
+                                        <span class="summary-val">DLY Lunar Mermaid Skirt</span>
+                                    </div>
+                                    <div class="summary-item">
+                                        <span>Pilihan Varian:</span>
+                                        <span class="summary-val" id="summarySelectedVariant" style="color: var(--pink-dark);">Hitam Maxi (Fit S-M)</span>
+                                    </div>
+                                    <div class="summary-item">
+                                        <span>Harga Satuan:</span>
+                                        <span id="sumUnitPrice" class="summary-val">Rp 99.000</span>
+                                    </div>
+                                    <div class="summary-item">
+                                        <span>Pengiriman:</span>
+                                        <span class="summary-val" style="color: #27ae60; font-weight: bold;">GRATIS ONGKIR</span>
+                                    </div>
+                                    <div class="summary-total">
+                                        <span>Total Pembayaran:</span>
+                                        <span id="sumTotalPrice" class="total-price">Rp 99.000</span>
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="order-button">Beli Sekarang via WhatsApp</button>
+                                
+                                <p class="order-info">
+                                    Transaksi aman dan diproses langsung via Customer Service WhatsApp DLY Wear.
+                                </p>
                             </div>
 
-                            <!-- QUANTITY CONTROL -->
-                            <div class="option-selector-group">
-                                <div class="option-label">
-                                    <span>Jumlah Pasang:</span>
-                                </div>
-                                <div class="quantity-control">
-                                    <button type="button" class="qty-btn" onclick="changeQty(-1)">-</button>
-                                    <input type="number" id="skirtJumlah" class="qty-input" value="1" min="1" readonly>
-                                    <button type="button" class="qty-btn" onclick="changeQty(1)">+</button>
-                                </div>
-                            </div>
-
-                            <!-- RECEIVER DETAILS INPUTS -->
-                            <div class="form-group-item">
-                                <label for="buyerName">Nama Lengkap</label>
-                                <input type="text" id="buyerName" placeholder="Masukkan nama penerima" required>
-                            </div>
-
-                            <div class="form-group-item">
-                                <label for="buyerWa">No. WhatsApp</label>
-                                <input type="tel" id="buyerWa" placeholder="08xxxxxxxxxx" required>
-                            </div>
-
-                            <div class="form-group-item">
-                                <label for="buyerCity">Kota / Kecamatan</label>
-                                <input type="text" id="buyerCity" placeholder="Contoh: Kec. Menteng, Jakarta Pusat" required>
-                            </div>
-
-                            <div class="form-group-item">
-                                <label for="buyerAddress">Alamat Lengkap</label>
-                                <input type="text" id="buyerAddress" placeholder="Jalan, No. Rumah, RT/RW, Kelurahan" required>
-                            </div>
-
-                            <!-- ORDER SUMMARY & TOTAL -->
-                            <div class="order-summary">
-                                <h3>Rincian Pembelian</h3>
-                                <div class="summary-item">
-                                    <span>Produk:</span>
-                                    <span class="summary-val">DLY Lunar Mermaid Skirt</span>
-                                </div>
-                                <div class="summary-item">
-                                    <span>Harga Satuan:</span>
-                                    <span id="sumUnitPrice" class="summary-val">Rp 99.000</span>
-                                </div>
-                                <div class="summary-item">
-                                    <span>Pengiriman:</span>
-                                    <span class="summary-val" style="color: #27ae60; font-weight: bold;">GRATIS ONGKIR</span>
-                                </div>
-                                <div class="summary-total">
-                                    <span>Total Pembayaran:</span>
-                                    <span id="sumTotalPrice" class="total-price">Rp 99.000</span>
-                                </div>
-                            </div>
-
-                            <button type="submit" class="order-button">Beli Sekarang</button>
-                            
-                            <p class="order-info">
-                                Transaksi aman dan diproses langsung via Customer Service WhatsApp DLY Wear.
-                            </p>
                         </form>
                     </div>
 
@@ -914,6 +1222,15 @@
         </div>
     </section>
 
+    <!-- STICKY BOTTOM BAR UNTUK MOBILE HP -->
+    <div class="sticky-bottom-bar" id="stickyBar">
+        <div class="sticky-price-info">
+            <span class="sticky-label">Harga Promo</span>
+            <span class="sticky-price">Rp 99.000</span>
+        </div>
+        <button class="sticky-order-btn" onclick="scrollToForm()">Beli Sekarang ↓</button>
+    </div>
+
     <footer>
         <div class="footer-logo">DLY Wear</div>
         <p>Tampil elegan. Tetap nyaman.</p>
@@ -921,122 +1238,179 @@
     </footer>
 
     <script>
-        const nomorWhatsApp = "6281234567890"; // WhatsApp CS DLY Wear
+        const nomorWhatsApp = "6281234567890";
 
-        // Database Images by Color Option
-        const colorImages = {
-            "Hitam Maxi": "https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?auto=format&fit=crop&w=800&q=80",
-            "Putih Maxi": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80",
-            "Ivory Maxi": "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=80",
-            "Cream Maxi": "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=800&q=80",
-            "Moca Maxi": "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80",
-            "Cream Midi": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80"
-        };
+        const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+        const navLinks = document.getElementById("navLinks");
 
-        // Current Selection State
-        let selectedSize = "Fit to S-M";
-        const selectedUnitPrice = 99000; // Flat price Rp 99.000
+        mobileMenuBtn.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+
+        let selectedSize = "Fit S-M";
+        const selectedUnitPrice = 99000;
         let selectedColor = "Hitam Maxi";
         let toastTimeout = null;
 
-        // Currency Formatter
+        const colorList = ["Hitam Maxi", "Putih Maxi", "Ivory Maxi", "Cream Maxi", "Moca Maxi", "Cream Midi"];
+        let currentSlideIndex = 0;
+
+        const wrapper = document.getElementById("imageWrapper");
+        const slides = document.querySelectorAll(".slide-item");
+
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        wrapper.addEventListener("touchstart", (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        wrapper.addEventListener("touchend", (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipeGesture();
+        }, { passive: true });
+
+        function handleSwipeGesture() {
+            const swipeDistance = touchEndX - touchStartX;
+            const threshold = 40;
+
+            if (swipeDistance < -threshold) {
+                if (currentSlideIndex < colorList.length - 1) {
+                    goToSlide(currentSlideIndex + 1);
+                }
+            } else if (swipeDistance > threshold) {
+                if (currentSlideIndex > 0) {
+                    goToSlide(currentSlideIndex - 1);
+                }
+            }
+        }
+
+        function goToSlide(index) {
+            currentSlideIndex = index;
+            slides.forEach((slide) => {
+                slide.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
+            });
+            const colorName = colorList[currentSlideIndex];
+            updateActiveState(colorName, currentSlideIndex);
+        }
+
+        function updateActiveState(colorName, activeIndex) {
+            selectedColor = colorName;
+            document.getElementById("selectedColorLabel").innerText = colorName;
+
+            // 1. Reset & Set Pilihan Warna Pill
+            const colorPills = document.querySelectorAll('#colorPillGrid .pill-btn');
+            colorPills.forEach(pill => pill.classList.remove('active'));
+            if (colorPills[activeIndex]) {
+                colorPills[activeIndex].classList.add('active');
+            }
+
+            // 2. Reset & Set Pilihan Thumbnail Gambar
+            const thumbs = document.querySelectorAll('#thumbnailList .thumb-img');
+            thumbs.forEach(thumb => thumb.classList.remove('active'));
+            if (thumbs[activeIndex]) {
+                thumbs[activeIndex].classList.add('active');
+            }
+
+            updateSummaryVariantLabel();
+            triggerColorToast(colorName);
+        }
+
+        function updateSummaryVariantLabel() {
+            const label = document.getElementById("summarySelectedVariant");
+            if (label) {
+                label.innerText = `${selectedColor} (${selectedSize})`;
+            }
+        }
+
+        /* FUNGSI KONTROL STEP FORM (STEP 1 vs STEP 2) */
+        function goToFormStep(stepNumber) {
+            const tab1 = document.getElementById("tabStep1");
+            const tab2 = document.getElementById("tabStep2");
+            const step1 = document.getElementById("step1Content");
+            const step2 = document.getElementById("step2Content");
+
+            if (stepNumber === 1) {
+                tab1.classList.add("active");
+                tab2.classList.remove("active");
+                step1.classList.add("active");
+                step2.classList.remove("active");
+            } else if (stepNumber === 2) {
+                tab1.classList.remove("active");
+                tab2.classList.add("active");
+                step1.classList.remove("active");
+                step2.classList.add("active");
+                updateSummaryVariantLabel();
+            }
+        }
+
+        function scrollToForm() {
+            const formElement = document.getElementById("formPemesanan");
+            if (formElement) {
+                formElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        /* DETEKSI KETIKA FORM PEMESANAN TERLIHAT DI LAYAR */
+        const formCard = document.getElementById("formPemesanan");
+        const stickyBar = document.getElementById("stickyBar");
+
+        if (formCard && stickyBar) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        stickyBar.classList.add("hidden");
+                    } else {
+                        stickyBar.classList.remove("hidden");
+                    }
+                });
+            }, {
+                root: null,
+                threshold: 0.1
+            });
+
+            observer.observe(formCard);
+        }
+
         function formatRupiah(num) {
             return "Rp " + num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
         }
 
-        // Animated Color Name Toast Trigger Function
         function triggerColorToast(colorName) {
             const toast = document.getElementById("colorToast");
             const toastText = document.getElementById("toastColorText");
             
-            toastText.innerText = "Warna: " + colorName;
-            
-            // Show toast with smooth fade-in
+            toastText.innerText = "Varian: " + colorName;
             toast.classList.add("show");
 
-            // Clear previous timer if clicked rapidly
             if (toastTimeout) {
                 clearTimeout(toastTimeout);
             }
 
-            // Hide toast after 1.8 seconds (fade out)
             toastTimeout = setTimeout(() => {
                 toast.classList.remove("show");
             }, 1800);
         }
 
-        // Select Size via Pill Button
         function selectSize(element, sizeName) {
             document.querySelectorAll('#sizePillGrid .pill-btn').forEach(btn => btn.classList.remove('active'));
             element.classList.add('active');
 
             selectedSize = sizeName;
             document.getElementById("selectedSizeLabel").innerText = sizeName;
+            updateSummaryVariantLabel();
         }
 
-        // Select Color via Pill Button
         function selectColorPill(element, colorName) {
-            document.querySelectorAll('#colorPillGrid .pill-btn').forEach(btn => btn.classList.remove('active'));
-            element.classList.add('active');
-
-            selectedColor = colorName;
-            document.getElementById("selectedColorLabel").innerText = colorName;
-
-            // Sync Main Image & Trigger Animated Toast Badge
-            syncImageByColorName(colorName);
+            const index = colorList.indexOf(colorName);
+            if (index !== -1) goToSlide(index);
         }
 
-        // Select Color via Thumbnail Click
         function selectColorFromThumb(thumbEl, colorName) {
-            document.querySelectorAll('.thumb-img').forEach(el => el.classList.remove('active'));
-            thumbEl.classList.add('active');
-
-            // Sync Color Pill Button State
-            const colorPills = document.querySelectorAll('#colorPillGrid .pill-btn');
-            colorPills.forEach(pill => {
-                if (pill.innerText.trim() === colorName) {
-                    pill.classList.add('active');
-                } else {
-                    pill.classList.remove('active');
-                }
-            });
-
-            selectedColor = colorName;
-            document.getElementById("selectedColorLabel").innerText = colorName;
-
-            // Switch Main Image Smoothly & Trigger Toast
-            const mainImg = document.getElementById("mainDisplayImage");
-            mainImg.style.opacity = "0.3";
-            setTimeout(() => {
-                mainImg.src = thumbEl.src;
-                mainImg.style.opacity = "1";
-                triggerColorToast(colorName);
-            }, 150);
+            const index = colorList.indexOf(colorName);
+            if (index !== -1) goToSlide(index);
         }
 
-        // Sync Image & Toast Badge By Color Name
-        function syncImageByColorName(colorName) {
-            if (colorImages[colorName]) {
-                const mainImg = document.getElementById("mainDisplayImage");
-                mainImg.style.opacity = "0.3";
-                setTimeout(() => {
-                    mainImg.src = colorImages[colorName];
-                    mainImg.style.opacity = "1";
-                    triggerColorToast(colorName);
-                }, 150);
-
-                // Highlight Corresponding Thumbnail
-                document.querySelectorAll('.thumb-img').forEach(thumb => {
-                    if (thumb.alt === colorName) {
-                        thumb.classList.add('active');
-                    } else {
-                        thumb.classList.remove('active');
-                    }
-                });
-            }
-        }
-
-        // Quantity Control (+ / -)
         function changeQty(delta) {
             const qtyInput = document.getElementById("skirtJumlah");
             let currentVal = parseInt(qtyInput.value) || 1;
@@ -1047,7 +1421,6 @@
             calculateTotal();
         }
 
-        // Real-Time Total Price Calculation
         function calculateTotal() {
             const jumlah = parseInt(document.getElementById("skirtJumlah").value) || 1;
             const total = selectedUnitPrice * jumlah;
@@ -1056,24 +1429,29 @@
             document.getElementById("sumTotalPrice").innerText = formatRupiah(total);
         }
 
-        // Submit Form to WhatsApp
         document.getElementById("skirtOrderForm").addEventListener("submit", function(e) {
             e.preventDefault();
 
+            const name = document.getElementById("buyerName").value.trim();
+            const wa = document.getElementById("buyerWa").value.trim();
+            const city = document.getElementById("buyerCity").value.trim();
+            const address = document.getElementById("buyerAddress").value.trim();
+
+            if (!name || !wa || !city || !address) {
+                alert("Mohon lengkapi semua data pengiriman terlebih dahulu.");
+                return;
+            }
+
             const jumlah = document.getElementById("skirtJumlah").value;
-            const name = document.getElementById("buyerName").value;
-            const wa = document.getElementById("buyerWa").value;
-            const city = document.getElementById("buyerCity").value;
-            const address = document.getElementById("buyerAddress").value;
             const total = document.getElementById("sumTotalPrice").innerText;
             const unitPrice = document.getElementById("sumUnitPrice").innerText;
 
             const pesan = 
 `Halo DLY Wear 👋
 
-Saya mau pesan produk ini:
+Saya ingin melakukan pemesanan:
 
-🛍️ *DETAIL PRODUK*
+🛍️ *RICIAN PEMESANAN*
 • Nama Produk: DLY Lunar Mermaid Skirt Scuba Premium
 • Ukuran: ${selectedSize}
 • Warna: ${selectedColor}
@@ -1093,11 +1471,10 @@ Saya mau pesan produk ini:
 
 Mohon bantuannya untuk instruksi pembayaran ya. Terima kasih 😊`;
 
-            const url = "https://wa.me/" + nomorWhatsApp + "?text=" + encodeURIComponent(pesan);
+            const url = "https://wa.me/" + 6287731427304 + "?text=" + encodeURIComponent(pesan);
             window.open(url, "_blank");
         });
 
-        // Initialize Calculation on Page Load
         calculateTotal();
     </script>
 </body>
