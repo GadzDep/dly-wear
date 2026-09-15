@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DLY Lunar Mermaid Skirt Wanita Scuba Premium — DLY Wear</title>
+
+    <meta name="description" content="Beli DLY Lunar Mermaid Skirt Wanita Scuba Premium. Bahan tebal, melar, dan elegan. Gratis Ongkir & Promo Terbatas!">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* =========================================
+           RESET & CSS VARIABLES
+        ========================================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #fcf9f7;
+            color: #292323;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button, input, select {
+            font-family: inherit;
+        }
+
+        :root {
+            --dark: #292323;
+            --soft-dark: #554b4b;
+            --cream: #fcf9f7;
+            --white: #ffffff;
+            --pink: #c98787;
+            --pink-dark: #a96565;
+            --pink-light: #f5e5e2;
+            --border: #eadfdb;
+            --green: #25a65a;
+            --green-dark: #1e8749;
+        }
+
+        .container {
+            width: min(100% - 36px, 1100px);
+            margin: auto;
+        }
+
+        /* =========================================
+           NAVBAR WITH DROPDOWN
+        ========================================= */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 16px 0;
+            background: rgba(252, 249, 247, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-item {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--dark);
+            transition: color .3s ease;
+        }
+
+        .nav-item:hover {
+            color: var(--pink-dark);
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-btn {
+            background: none;
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--dark);
+            cursor: pointer;
+            padding: 5px 0;
+            transition: color .3s ease;
+        }
+
+        .dropdown-btn:hover {
+            color: var(--pink-dark);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            min-width: 220px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            padding: 8px 0;
+            z-index: 110;
+        }
+
+        .dropdown-content a {
+            color: var(--dark);
+            padding: 10px 18px;
+            text-decoration: none;
+            display: block;
+            font-size: 13px;
+            font-weight: 500;
+            transition: background .2s ease, color .2s ease;
+        }
+
+        .dropdown-content a:hover {
+            background-color: var(--pink-light);
+            color: var(--pink-dark);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* =========================================
+           PRODUCT DETAIL LAYOUT
+        ========================================= */
+        .product-detail-section {
+            padding-top: 110px;
+            padding-bottom: 70px;
+        }
+
+        .breadcrumb {
+            font-size: 12px;
+            color: var(--soft-dark);
+            margin-bottom: 25px;
+        }
+
+        .breadcrumb a {
+            color: var(--pink-dark);
+            font-weight: 600;
+        }
+
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        /* Gallery Container & Animated Color Name Toast */
+        .gallery-container {
+            position: sticky;
+            top: 100px;
+        }
+
+        .image-wrapper {
+            position: relative;
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(70,45,45,.06);
+            border: 1px solid var(--border);
+        }
+
+        .main-image {
+            width: 100%;
+            height: 480px;
+            object-fit: cover;
+            display: block;
+            transition: opacity .25s ease;
+        }
+
+        /* Color Toast Badge overlay */
+        .color-toast {
+            position: absolute;
+            bottom: 18px;
+            left: 18px;
+            background: rgba(41, 35, 35, 0.88);
+            color: #ffffff;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            opacity: 0;
+            transform: translateY(10px);
+            pointer-events: none;
+            transition: opacity 0.35s ease, transform 0.35s ease;
+            z-index: 10;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        .color-toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .color-toast-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--pink);
+            display: inline-block;
+        }
+
+        .thumbnail-list {
+            display: flex;
+            gap: 10px;
+            margin-top: 14px;
+            overflow-x: auto;
+            padding-bottom: 5px;
+        }
+
+        .thumb-img {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: .25s ease;
+        }
+
+        .thumb-img.active, .thumb-img:hover {
+            border-color: var(--pink-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Product Information */
+        .detail-info .product-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(24px, 5vw, 32px);
+            line-height: 1.2;
+            color: var(--dark);
+            margin-bottom: 12px;
+        }
+
+        .detail-rating {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #f39c12;
+            margin-bottom: 18px;
+        }
+
+        .detail-rating span {
+            color: var(--soft-dark);
+            font-size: 12px;
+        }
+
+        /* Price Box */
+        .price-box {
+            background: #fdf6f5;
+            border: 1px solid var(--border);
+            padding: 16px 20px;
+            border-radius: 16px;
+            margin-bottom: 25px;
+        }
+
+        .price-label-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 6px;
+        }
+
+        .badge-promo {
+            background: #e74c3c;
+            color: white;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .badge-ongkir {
+            background: #27ae60;
+            color: white;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .price-wrapper {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .original-price {
+            font-size: 16px;
+            color: #95a5a6;
+            text-decoration: line-through;
+            font-weight: 500;
+        }
+
+        .discount-price {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--pink-dark);
+        }
+
+        .save-tag {
+            font-size: 11px;
+            color: #c0392b;
+            font-weight: 700;
+        }
+
+        /* Description & Size Chart */
+        .description-box, .size-chart-box {
+            margin-bottom: 30px;
+        }
+
+        .description-box h3, .size-chart-box h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            border-bottom: 2px solid var(--pink-light);
+            padding-bottom: 6px;
+            display: inline-block;
+        }
+
+        .description-box p, .description-box ul {
+            font-size: 13px;
+            color: var(--soft-dark);
+            line-height: 1.8;
+        }
+
+        .description-box ul {
+            padding-left: 18px;
+            margin-top: 8px;
+        }
+
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+        }
+
+        .size-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .size-table th {
+            background: var(--dark);
+            color: white;
+            padding: 12px;
+            font-weight: 600;
+        }
+
+        .size-table td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border);
+            color: var(--soft-dark);
+        }
+
+        .size-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .size-note {
+            font-size: 11px;
+            color: #857777;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        /* =========================================
+           FORM PEMBELIAN RAPI & STYLED
+        ========================================= */
+        .detail-order-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 28px;
+            box-shadow: 0 18px 45px rgba(60,40,40,.07);
+        }
+
+        .detail-order-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            margin-bottom: 6px;
+        }
+
+        .detail-order-card .sub-title {
+            font-size: 12px;
+            color: var(--soft-dark);
+            margin-bottom: 22px;
+        }
+
+        .option-selector-group {
+            margin-bottom: 20px;
+        }
+
+        .option-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .option-selected-text {
+            color: var(--pink-dark);
+            font-weight: 600;
+            text-transform: none;
+        }
+
+        .pill-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .pill-btn {
+            background: #fdfafa;
+            border: 1.5px solid var(--border);
+            border-radius: 12px;
+            padding: 10px 16px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--dark);
+            cursor: pointer;
+            transition: all .25s ease;
+            user-select: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .pill-btn:hover {
+            border-color: var(--pink);
+            background: white;
+        }
+
+        .pill-btn.active {
+            background: var(--pink-dark);
+            color: white;
+            border-color: var(--pink-dark);
+            box-shadow: 0 6px 15px rgba(169,101,101,.25);
+        }
+
+        .quantity-control {
+            display: inline-flex;
+            align-items: center;
+            border: 1.5px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            background: #fdfafa;
+        }
+
+        .qty-btn {
+            width: 38px;
+            height: 38px;
+            background: none;
+            border: none;
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--dark);
+            cursor: pointer;
+            transition: background .2s ease;
+        }
+
+        .qty-btn:hover {
+            background: var(--pink-light);
+            color: var(--pink-dark);
+        }
+
+        .qty-input {
+            width: 45px;
+            height: 38px;
+            border: none;
+            background: none;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--dark);
+            outline: none;
+        }
+
+        /* Form Inputs Styling */
+        .form-group-item {
+            margin-bottom: 18px;
+        }
+
+        .form-group-item label {
+            display: block;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+
+        .form-group-item input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1.5px solid #e4d9d6;
+            border-radius: 12px;
+            background: #fdfafa;
+            outline: none;
+            font-size: 13px;
+            transition: all .25s ease;
+        }
+
+        .form-group-item input:focus {
+            border-color: var(--pink-dark);
+            background: white;
+            box-shadow: 0 0 0 4px rgba(201,135,135,.12);
+        }
+
+        /* Order Summary Box */
+        .order-summary {
+            background: #fcf6f5;
+            border: 1px dashed var(--pink-dark);
+            border-radius: 16px;
+            padding: 18px;
+            margin: 22px 0;
+        }
+
+        .order-summary h3 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 12px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            color: var(--soft-dark);
+            margin-bottom: 8px;
+        }
+
+        .summary-val {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .summary-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-top: 12px;
+            padding-top: 10px;
+            border-top: 1px solid var(--border);
+        }
+
+        .total-price {
+            font-size: 18px;
+            color: var(--pink-dark);
+        }
+
+        .order-button {
+            width: 100%;
+            border: none;
+            border-radius: 14px;
+            padding: 16px;
+            background: var(--green);
+            color: white;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all .3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .order-button:hover {
+            background: var(--green-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(37,166,90,.25);
+        }
+
+        .order-info {
+            text-align: center;
+            margin-top: 14px;
+            font-size: 11px;
+            color: #857777;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            padding: 35px 20px;
+            background: #292323;
+            color: white;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 25px;
+            margin-bottom: 8px;
+        }
+
+        footer p {
+            color: #afa2a2;
+            font-size: 11px;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 850px) {
+            .detail-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .gallery-container {
+                position: static;
+            }
+
+            .main-image {
+                width: 100%;
+                aspect-ratio: 4 / 5;
+                object-fit: cover;
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-inner">
+            <a href="index.html" class="logo">DLY Wear</a>
+
+            <div class="nav-links">
+                <a href="../index.html#beranda" class="nav-item">Beranda</a>
+                
+                <div class="dropdown">
+                    <button class="dropdown-btn">Katalog ▾</button>
+                    <div class="dropdown-content">
+                        <a href="produk-skirt.html">Skirt Scuba Premium</a>
+                        <a href="produk-aurelia.html">Aurelia Blouse</a>
+                        <a href="produk-kima.html">Kima Blouse Polkadot</a>
+                        <a href="produk-linya.html">Linya Blouse Motif</a>
+                    </div>
+                </div>
+
+                <a href="index.html#marketplace" class="nav-item">Toko Online</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="section product-detail-section">
+        <div class="container">
+            
+            <!-- Breadcrumb Navigation -->
+            <div class="breadcrumb">
+                <a href="index.html">Beranda</a> / <a href="index.html#katalog">Katalog</a> / <span>DLY Lunar Mermaid Skirt</span>
+            </div>
+
+            <div class="detail-grid">
+
+                <!-- GALLERY CONTAINER & MAIN IMAGE WITH FLOATING TOAST -->
+                <div class="gallery-container">
+                    <div class="image-wrapper">
+                        <img id="mainDisplayImage" src="https://down-id.img.susercontent.com/file/id-11134207-822wq-mni5vw7p8hkw25.webp" alt="DLY Lunar Mermaid Skirt" class="main-image">
+                        
+                        <!-- Animated Color Name Toast Overlay -->
+                        <div class="color-toast" id="colorToast">
+                            <span class="color-toast-dot"></span>
+                            <span id="toastColorText">Varian: Hitam Maxi</span>
+                        </div>
+                    </div>
+
+                    <div class="thumbnail-list">
+                        <img src="../assets/images/mermaid-hitam-maxi.jpg" alt="Hitam Maxi" class="thumb-img active" onclick="selectColorFromThumb(this, 'Hitam Maxi')">
+                        <img src="../assets/images/mermaid-putih-maxi.jpg" alt="Putih Maxi" class="thumb-img" onclick="selectColorFromThumb(this, 'Putih Maxi')">
+                        <img src="../assets/images/mermaid-ivory-maxi.jpg" alt="Ivory Maxi" class="thumb-img" onclick="selectColorFromThumb(this, 'Ivory Maxi')">
+                        <img src="../assets/images/mermaid-cream-maxi.jpg" alt="Cream Maxi" class="thumb-img" onclick="selectColorFromThumb(this, 'Cream Maxi')">
+                        <img src="../assets/images/mermaid-moca-maxi.jpg" alt="Moca Maxi" class="thumb-img" onclick="selectColorFromThumb(this, 'Moca Maxi')">
+                        <img src="../assets/images/mermaid-cream-midi.jpg" alt="Cream Midi" class="thumb-img" onclick="selectColorFromThumb(this, 'Cream Midi')">
+                    </div>
+                </div>
+
+                <!-- PRODUCT DETAILS & ORDER FORM -->
+                <div class="detail-info">
+                    
+                    <h1 class="product-title">DLY Lunar Mermaid Skirt Wanita Scuba Premium</h1>
+
+                    <div class="detail-rating">
+                        ★★★★★ <span>5.0 (128 Ulasan Terjual)</span>
+                    </div>
+
+                    <!-- Price Box with Strike-through original price -->
+                    <div class="price-box">
+                        <div class="price-label-row">
+                            <span class="badge-promo">🔥 PROMO SPESIAL</span>
+                            <span class="badge-ongkir">🚚 GRATIS ONGKIR</span>
+                        </div>
+                        <div class="price-wrapper">
+                            <span class="original-price">Rp 249.000</span>
+                            <span class="discount-price" id="displayPrice">Rp 99.000</span>
+                        </div>
+                        <span class="save-tag">Hemat Rp 150.000 (Diskon 60%)</span>
+                    </div>
+
+                    <!-- Description Box -->
+                    <div class="description-box">
+                        <h3>Deskripsi Produk</h3>
+                        <p>
+                            <strong>DLY Lunar Mermaid Skirt</strong> dirancang dengan potongan duyung (mermaid) yang anggun dan memberikan ilusi jenjang pada tubuh. Menggunakan bahan Scuba Premium berkepadatan tinggi yang lembut, tebal, tidak menerawang, serta sangat elastis sehingga memberikan kenyamanan maksimal untuk pemakaian seharian.
+                        </p>
+                        <ul>
+                            <li><strong>Material:</strong> Premium Scuba (Tebal, Stretch, Halus & jatuh memikat)</li>
+                            <li><strong>Model:</strong> Highwaist Mermaid Skirt dengan pinggang karet elastis</li>
+                            <li><strong>Jahitan:</strong> Rapi standar butik kelas atas</li>
+                            <li><strong>Cocok untuk:</strong> Acara formal, pesta, kondangan, maupun outfit kerja elegan</li>
+                        </ul>
+                    </div>
+
+                    <!-- Size Chart Table -->
+                    <div class="size-chart-box">
+                        <h3>Panduan Ukuran (Size Chart)</h3>
+                        <div class="table-responsive">
+                            <table class="size-table">
+                                <thead>
+                                    <tr>
+                                        <th>Ukuran</th>
+                                        <th>Lingkar Pinggang</th>
+                                        <th>Lingkar Pinggul</th>
+                                        <th>Panjang Skirt</th>
+                                        <th>Estimasi BB</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Fit to S-M</strong></td>
+                                        <td>60 - 82 cm</td>
+                                        <td>84 - 98 cm</td>
+                                        <td>92 cm</td>
+                                        <td>40 - 55 kg</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Fit to L-XL</strong></td>
+                                        <td>70 - 95 cm</td>
+                                        <td>94 - 110 cm</td>
+                                        <td>94 cm</td>
+                                        <td>56 - 72 kg</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="size-note">*Toleransi ukuran 1-2 cm karena sifat bahan scuba yang melar.</p>
+                    </div>
+
+                    <!-- ORDER FORM CARD -->
+                    <div class="detail-order-card" id="formPemesanan">
+                        <h3>Pilih Varian & Pesan</h3>
+                        <p class="sub-title">Silakan tentukan pilihan varian dan isi data pengiriman kamu.</p>
+
+                        <form id="skirtOrderForm">
+
+                            <!-- SIZE SELECTOR (BUTTON PILLS) -->
+                            <div class="option-selector-group">
+                                <div class="option-label">
+                                    <span>Pilih Ukuran:</span>
+                                    <span class="option-selected-text" id="selectedSizeLabel">Fit to S-M</span>
+                                </div>
+                                <div class="pill-grid" id="sizePillGrid">
+                                    <div class="pill-btn active" onclick="selectSize(this, 'Fit to S-M')">Fit to S-M</div>
+                                    <div class="pill-btn" onclick="selectSize(this, 'Fit to L-XL')">Fit to L-XL</div>
+                                </div>
+                            </div>
+
+                            <!-- COLOR SELECTOR (BUTTON PILLS) -->
+                            <div class="option-selector-group">
+                                <div class="option-label">
+                                    <span>Pilih Warna:</span>
+                                    <span class="option-selected-text" id="selectedColorLabel">Hitam Maxi</span>
+                                </div>
+                                <div class="pill-grid" id="colorPillGrid">
+                                    <div class="pill-btn active" onclick="selectColorPill(this, 'Hitam Maxi')">Hitam Maxi</div>
+                                    <div class="pill-btn" onclick="selectColorPill(this, 'Putih Maxi')">Putih Maxi</div>
+                                    <div class="pill-btn" onclick="selectColorPill(this, 'Ivory Maxi')">Ivory Maxi</div>
+                                    <div class="pill-btn" onclick="selectColorPill(this, 'Cream Maxi')">Cream Maxi</div>
+                                    <div class="pill-btn" onclick="selectColorPill(this, 'Moca Maxi')">Moca Maxi</div>
+                                    <div class="pill-btn" onclick="selectColorPill(this, 'Cream Midi')">Cream Midi</div>
+                                </div>
+                            </div>
+
+                            <!-- QUANTITY CONTROL -->
+                            <div class="option-selector-group">
+                                <div class="option-label">
+                                    <span>Jumlah Pasang:</span>
+                                </div>
+                                <div class="quantity-control">
+                                    <button type="button" class="qty-btn" onclick="changeQty(-1)">-</button>
+                                    <input type="number" id="skirtJumlah" class="qty-input" value="1" min="1" readonly>
+                                    <button type="button" class="qty-btn" onclick="changeQty(1)">+</button>
+                                </div>
+                            </div>
+
+                            <!-- RECEIVER DETAILS INPUTS -->
+                            <div class="form-group-item">
+                                <label for="buyerName">Nama Lengkap</label>
+                                <input type="text" id="buyerName" placeholder="Masukkan nama penerima" required>
+                            </div>
+
+                            <div class="form-group-item">
+                                <label for="buyerWa">No. WhatsApp</label>
+                                <input type="tel" id="buyerWa" placeholder="08xxxxxxxxxx" required>
+                            </div>
+
+                            <div class="form-group-item">
+                                <label for="buyerCity">Kota / Kecamatan</label>
+                                <input type="text" id="buyerCity" placeholder="Contoh: Kec. Menteng, Jakarta Pusat" required>
+                            </div>
+
+                            <div class="form-group-item">
+                                <label for="buyerAddress">Alamat Lengkap</label>
+                                <input type="text" id="buyerAddress" placeholder="Jalan, No. Rumah, RT/RW, Kelurahan" required>
+                            </div>
+
+                            <!-- ORDER SUMMARY & TOTAL -->
+                            <div class="order-summary">
+                                <h3>Rincian Pembelian</h3>
+                                <div class="summary-item">
+                                    <span>Produk:</span>
+                                    <span class="summary-val">DLY Lunar Mermaid Skirt</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span>Harga Satuan:</span>
+                                    <span id="sumUnitPrice" class="summary-val">Rp 99.000</span>
+                                </div>
+                                <div class="summary-item">
+                                    <span>Pengiriman:</span>
+                                    <span class="summary-val" style="color: #27ae60; font-weight: bold;">GRATIS ONGKIR</span>
+                                </div>
+                                <div class="summary-total">
+                                    <span>Total Pembayaran:</span>
+                                    <span id="sumTotalPrice" class="total-price">Rp 99.000</span>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="order-button">Beli Sekarang</button>
+                            
+                            <p class="order-info">
+                                Transaksi aman dan diproses langsung via Customer Service WhatsApp DLY Wear.
+                            </p>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-logo">DLY Wear</div>
+        <p>Tampil elegan. Tetap nyaman.</p>
+        <p style="margin-top: 15px;">© 2026 DLY Wear. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const nomorWhatsApp = "6281234567890"; // WhatsApp CS DLY Wear
+
+        // Database Images by Color Option
+        const colorImages = {
+            "Hitam Maxi": "https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?auto=format&fit=crop&w=800&q=80",
+            "Putih Maxi": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80",
+            "Ivory Maxi": "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=80",
+            "Cream Maxi": "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=800&q=80",
+            "Moca Maxi": "https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80",
+            "Cream Midi": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80"
+        };
+
+        // Current Selection State
+        let selectedSize = "Fit to S-M";
+        const selectedUnitPrice = 99000; // Flat price Rp 99.000
+        let selectedColor = "Hitam Maxi";
+        let toastTimeout = null;
+
+        // Currency Formatter
+        function formatRupiah(num) {
+            return "Rp " + num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        }
+
+        // Animated Color Name Toast Trigger Function
+        function triggerColorToast(colorName) {
+            const toast = document.getElementById("colorToast");
+            const toastText = document.getElementById("toastColorText");
+            
+            toastText.innerText = "Warna: " + colorName;
+            
+            // Show toast with smooth fade-in
+            toast.classList.add("show");
+
+            // Clear previous timer if clicked rapidly
+            if (toastTimeout) {
+                clearTimeout(toastTimeout);
+            }
+
+            // Hide toast after 1.8 seconds (fade out)
+            toastTimeout = setTimeout(() => {
+                toast.classList.remove("show");
+            }, 1800);
+        }
+
+        // Select Size via Pill Button
+        function selectSize(element, sizeName) {
+            document.querySelectorAll('#sizePillGrid .pill-btn').forEach(btn => btn.classList.remove('active'));
+            element.classList.add('active');
+
+            selectedSize = sizeName;
+            document.getElementById("selectedSizeLabel").innerText = sizeName;
+        }
+
+        // Select Color via Pill Button
+        function selectColorPill(element, colorName) {
+            document.querySelectorAll('#colorPillGrid .pill-btn').forEach(btn => btn.classList.remove('active'));
+            element.classList.add('active');
+
+            selectedColor = colorName;
+            document.getElementById("selectedColorLabel").innerText = colorName;
+
+            // Sync Main Image & Trigger Animated Toast Badge
+            syncImageByColorName(colorName);
+        }
+
+        // Select Color via Thumbnail Click
+        function selectColorFromThumb(thumbEl, colorName) {
+            document.querySelectorAll('.thumb-img').forEach(el => el.classList.remove('active'));
+            thumbEl.classList.add('active');
+
+            // Sync Color Pill Button State
+            const colorPills = document.querySelectorAll('#colorPillGrid .pill-btn');
+            colorPills.forEach(pill => {
+                if (pill.innerText.trim() === colorName) {
+                    pill.classList.add('active');
+                } else {
+                    pill.classList.remove('active');
+                }
+            });
+
+            selectedColor = colorName;
+            document.getElementById("selectedColorLabel").innerText = colorName;
+
+            // Switch Main Image Smoothly & Trigger Toast
+            const mainImg = document.getElementById("mainDisplayImage");
+            mainImg.style.opacity = "0.3";
+            setTimeout(() => {
+                mainImg.src = thumbEl.src;
+                mainImg.style.opacity = "1";
+                triggerColorToast(colorName);
+            }, 150);
+        }
+
+        // Sync Image & Toast Badge By Color Name
+        function syncImageByColorName(colorName) {
+            if (colorImages[colorName]) {
+                const mainImg = document.getElementById("mainDisplayImage");
+                mainImg.style.opacity = "0.3";
+                setTimeout(() => {
+                    mainImg.src = colorImages[colorName];
+                    mainImg.style.opacity = "1";
+                    triggerColorToast(colorName);
+                }, 150);
+
+                // Highlight Corresponding Thumbnail
+                document.querySelectorAll('.thumb-img').forEach(thumb => {
+                    if (thumb.alt === colorName) {
+                        thumb.classList.add('active');
+                    } else {
+                        thumb.classList.remove('active');
+                    }
+                });
+            }
+        }
+
+        // Quantity Control (+ / -)
+        function changeQty(delta) {
+            const qtyInput = document.getElementById("skirtJumlah");
+            let currentVal = parseInt(qtyInput.value) || 1;
+            currentVal += delta;
+            if (currentVal < 1) currentVal = 1;
+            qtyInput.value = currentVal;
+
+            calculateTotal();
+        }
+
+        // Real-Time Total Price Calculation
+        function calculateTotal() {
+            const jumlah = parseInt(document.getElementById("skirtJumlah").value) || 1;
+            const total = selectedUnitPrice * jumlah;
+
+            document.getElementById("sumUnitPrice").innerText = formatRupiah(selectedUnitPrice);
+            document.getElementById("sumTotalPrice").innerText = formatRupiah(total);
+        }
+
+        // Submit Form to WhatsApp
+        document.getElementById("skirtOrderForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const jumlah = document.getElementById("skirtJumlah").value;
+            const name = document.getElementById("buyerName").value;
+            const wa = document.getElementById("buyerWa").value;
+            const city = document.getElementById("buyerCity").value;
+            const address = document.getElementById("buyerAddress").value;
+            const total = document.getElementById("sumTotalPrice").innerText;
+            const unitPrice = document.getElementById("sumUnitPrice").innerText;
+
+            const pesan = 
+`Halo DLY Wear 👋
+
+Saya mau pesan produk ini:
+
+🛍️ *DETAIL PRODUK*
+• Nama Produk: DLY Lunar Mermaid Skirt Scuba Premium
+• Ukuran: ${selectedSize}
+• Warna: ${selectedColor}
+• Jumlah: ${jumlah} pcs
+• Harga Satuan: ${unitPrice}
+• Pengiriman: FREE ONGKIR
+
+📋 *DATA PENERIMA*
+• Nama Lengkap: ${name}
+• No. WhatsApp: ${wa}
+• Kota / Kecamatan: ${city}
+• Alamat Lengkap: ${address}
+
+----------------------------------
+💰 *TOTAL PEMBAYARAN: ${total}*
+----------------------------------
+
+Mohon bantuannya untuk instruksi pembayaran ya. Terima kasih 😊`;
+
+            const url = "https://wa.me/" + nomorWhatsApp + "?text=" + encodeURIComponent(pesan);
+            window.open(url, "_blank");
+        });
+
+        // Initialize Calculation on Page Load
+        calculateTotal();
+    </script>
+</body>
+</html>

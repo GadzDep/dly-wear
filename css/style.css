@@ -34,6 +34,9 @@ button, input, select {
     --pink-dark: #a96565;
     --pink-light: #f5e5e2;
     --border: #eadfdb;
+    --shopee-color: #ee4d2d;
+    --tiktok-color: #000000;
+    --tokopedia-color: #03ac0e;
 }
 
 .container {
@@ -69,27 +72,102 @@ button, input, select {
     margin-top: 15px;
 }
 
-/* NAVBAR */
+/* NAVBAR WITH DROPDOWN */
 .navbar {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 20;
-    padding: 20px 0;
+    z-index: 100;
+    padding: 16px 0;
+    background: rgba(252, 249, 247, 0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
 }
 
 .nav-inner {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
 .logo {
     font-family: 'Playfair Display', serif;
-    font-size: 25px;
+    font-size: 24px;
     font-weight: 700;
     letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-item {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--dark);
+    transition: color .3s ease;
+}
+
+.nav-item:hover {
+    color: var(--pink-dark);
+}
+
+/* DROPDOWN KATALOG */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-btn {
+    background: none;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--dark);
+    cursor: pointer;
+    padding: 5px 0;
+    transition: color .3s ease;
+}
+
+.dropdown-btn:hover {
+    color: var(--pink-dark);
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    min-width: 220px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    padding: 8px 0;
+    z-index: 110;
+}
+
+.dropdown-content a {
+    color: var(--dark);
+    padding: 10px 18px;
+    text-decoration: none;
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    transition: background .2s ease, color .2s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--pink-light);
+    color: var(--pink-dark);
+}
+
+/* Tampilkan dropdown saat Hover */
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 /* HERO */
@@ -101,6 +179,7 @@ button, input, select {
     justify-content: center;
     text-align: center;
     overflow: hidden;
+    padding-top: 60px;
     background: radial-gradient(circle at 50% 30%, rgba(245, 229, 226, .95), transparent 55%),
                 linear-gradient(145deg, #fcf9f7, #f6ebe8);
 }
@@ -180,24 +259,37 @@ button, input, select {
     animation: fadeUp .8s .3s ease both;
 }
 
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 30px;
+    animation: fadeUp .8s .4s ease both;
+}
+
 .hero-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin-top: 30px;
-    padding: 15px 25px;
+    padding: 14px 24px;
     background: var(--dark);
     color: white;
     border-radius: 100px;
     font-size: 13px;
     font-weight: 700;
     transition: .3s ease;
-    animation: fadeUp .8s .4s ease both;
+}
+
+.hero-button.secondary {
+    background: white;
+    color: var(--dark);
+    border: 1px solid var(--border);
 }
 
 .hero-button:hover {
     transform: translateY(-4px);
     background: var(--pink-dark);
+    color: white;
     box-shadow: 0 15px 30px rgba(80,50,50,.15);
 }
 
@@ -269,58 +361,85 @@ button, input, select {
     margin-top: 17px;
 }
 
-/* BENEFITS */
-.benefits-header {
+/* MARKETPLACE SECTION */
+.marketplace-section {
+    background: white;
+}
+
+.marketplace-header {
     text-align: center;
     max-width: 650px;
     margin: auto;
 }
 
-.benefits-grid {
+.marketplace-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
     margin-top: 40px;
 }
 
-.benefit-card {
-    padding: 24px 18px;
-    background: white;
+.marketplace-card {
+    background: #fdfafa;
     border: 1px solid var(--border);
     border-radius: 20px;
-    transition: .35s ease;
+    padding: 30px 20px;
+    text-align: center;
+    transition: all .3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.benefit-card:hover {
-    transform: translateY(-7px);
+.marketplace-card:hover {
+    transform: translateY(-8px);
     box-shadow: 0 18px 40px rgba(70,45,45,.08);
 }
 
-.benefit-icon {
-    width: 45px;
-    height: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 14px;
-    background: var(--pink-light);
-    font-size: 20px;
-    margin-bottom: 18px;
+.mp-icon {
+    font-size: 36px;
+    margin-bottom: 12px;
 }
 
-.benefit-card h3 {
+.marketplace-card h3 {
     font-family: 'Playfair Display', serif;
-    font-size: 19px;
+    font-size: 22px;
     margin-bottom: 8px;
 }
 
-.benefit-card p {
-    color: var(--soft-dark);
+.marketplace-card p {
     font-size: 12px;
-    line-height: 1.7;
+    color: var(--soft-dark);
+    line-height: 1.6;
+    margin-bottom: 20px;
 }
 
-/* SINGLE CARD PRODUCT WITH NAV BUTTONS */
+.mp-btn {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 10px 18px;
+    border-radius: 50px;
+    background: var(--pink-light);
+    color: var(--pink-dark);
+    transition: all .3s ease;
+}
+
+.marketplace-card.shopee:hover .mp-btn {
+    background: var(--shopee-color);
+    color: white;
+}
+
+.marketplace-card.tiktok:hover .mp-btn {
+    background: var(--tiktok-color);
+    color: white;
+}
+
+.marketplace-card.tokopedia:hover .mp-btn {
+    background: var(--tokopedia-color);
+    color: white;
+}
+
+/* KATALOG PRODUK SECTION */
 .product-section {
     background: #f5ebe8;
 }
@@ -444,8 +563,10 @@ button, input, select {
     cursor: pointer;
 }
 
-.btn-buy {
+.btn-detail {
+    display: inline-block;
     width: 100%;
+    text-align: center;
     padding: 14px;
     background: var(--dark);
     color: white;
@@ -457,141 +578,9 @@ button, input, select {
     transition: .3s ease;
 }
 
-.btn-buy:hover {
+.btn-detail:hover {
     background: var(--pink-dark);
     box-shadow: 0 10px 20px rgba(169,101,101,.2);
-}
-
-/* ORDER & FORM */
-.order {
-    background: var(--cream);
-}
-
-.order-header {
-    text-align: center;
-    max-width: 650px;
-    margin: auto;
-}
-
-.order-card {
-    max-width: 600px;
-    margin: 40px auto 0;
-    padding: 25px;
-    background: white;
-    border: 1px solid var(--border);
-    border-radius: 25px;
-    box-shadow: 0 20px 60px rgba(60,40,40,.08);
-}
-
-.form-group {
-    margin-bottom: 18px;
-}
-
-.form-group label {
-    display: block;
-    font-size: 12px;
-    font-weight: 700;
-    margin-bottom: 8px;
-}
-
-.form-group input, .form-group select {
-    width: 100%;
-    padding: 14px 15px;
-    border: 1px solid #e4d9d6;
-    border-radius: 12px;
-    background: #fdfafa;
-    outline: none;
-    font-size: 13px;
-    transition: .25s ease;
-}
-
-.form-group input:focus, .form-group select:focus {
-    border-color: var(--pink);
-    background: white;
-    box-shadow: 0 0 0 4px rgba(201,135,135,.1);
-}
-
-.form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-}
-
-/* RINCIAN PESANAN BOX */
-.order-summary {
-    background: #fcf6f5;
-    border: 1px dashed var(--pink-dark);
-    border-radius: 16px;
-    padding: 18px;
-    margin: 20px 0 22px;
-}
-
-.order-summary h3 {
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--dark);
-    margin-bottom: 12px;
-    padding-bottom: 6px;
-    border-bottom: 1px solid var(--border);
-}
-
-.summary-item {
-    display: flex;
-    justify-content: space-between;
-    font-size: 12px;
-    color: var(--soft-dark);
-    margin-bottom: 8px;
-}
-
-.summary-val {
-    font-weight: 600;
-    color: var(--dark);
-    text-align: right;
-    max-width: 65%;
-}
-
-.summary-total {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--dark);
-    margin-top: 12px;
-    padding-top: 10px;
-    border-top: 1px solid var(--border);
-}
-
-.total-price {
-    font-size: 18px;
-    color: var(--pink-dark);
-}
-
-.order-button {
-    width: 100%;
-    border: none;
-    border-radius: 13px;
-    padding: 16px;
-    background: #292323;
-    color: white;
-    font-size: 14px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: .3s ease;
-}
-
-.order-button:hover {
-    background: #25a65a;
-    transform: translateY(-3px);
-    box-shadow: 0 12px 25px rgba(37,166,90,.18);
-}
-
-.order-info {
-    text-align: center;
-    margin-top: 14px;
-    font-size: 11px;
-    color: #857777;
-    line-height: 1.6;
 }
 
 /* FOOTER */
@@ -660,53 +649,18 @@ footer p {
 }
 
 /* RESPONSIVE MEDIA QUERIES */
-@media (min-width: 700px) {
-    .container {
-        width: min(90%, 1100px);
-    }
-    .section {
-        padding: 100px 0;
-    }
-    .benefits-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-    .benefit-card {
-        padding: 28px 22px;
-    }
-    .order-card {
-        padding: 35px;
-    }
-}
-
-@media (max-width: 380px) {
-    .container {
-        width: calc(100% - 28px);
-    }
-    .hero h1 {
-        font-size: 50px;
-    }
-    .hero-tagline {
-        font-size: 22px;
-    }
-    .benefits-grid {
-        gap: 8px;
-    }
-    .benefit-card {
-        padding: 20px 14px;
-    }
-    .benefit-card h3 {
-        font-size: 17px;
-    }
-    .form-row {
+@media (max-width: 768px) {
+    .marketplace-grid {
         grid-template-columns: 1fr;
-        gap: 0;
     }
-    .single-card-wrapper {
-        gap: 6px;
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 10px;
     }
-    .nav-btn {
-        width: 35px;
-        height: 35px;
-        font-size: 14px;
+
+    .dropdown-content {
+        right: 0;
+        left: auto;
     }
 }
