@@ -34,7 +34,7 @@ const products = [
         }
     },
     {
-        name: "DLY Kima Blouse Polkadot Premium",
+        name: "DLY Kima Blouse   Premium",
         rating: "★★★★★ <span>(5.0/5)</span>",
         detailPage: "produk-kima.html",
         variants: [
