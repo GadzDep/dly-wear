@@ -53,7 +53,7 @@ const products = [
     {
         name: "DLY Linya Blouse Wanita Rayon Premium Motif Elegan",
         rating: "★★★★★ <span>(4.9/5)</span>",
-        detailPage: "produk-linya.html",
+        detailPage: "linya-blouse.html",
         variants: [
             { size: "M (LD100)", price: "Rp 79.900" },
             { size: "L (LD110)", price: "Rp 85.500" },
