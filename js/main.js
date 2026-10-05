@@ -5,7 +5,7 @@ const products = [
     {
         name: "DLY Lunar Mermaid Skirt Wanita Scuba Premium",
         rating: "★★★★★ <span>(4.9/5)</span>",
-        detailPage: "produk-skirt.html",
+        detailPage: "lunar-mermaid-skirt.html",
         variants: [
             { size: "Fit to S-M", price: "Rp 79.900" },
             { size: "Fit to L-XL", price: "Rp 81.900" }

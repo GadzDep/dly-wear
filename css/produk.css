@@ -1,10 +1,13 @@
-        *, *::before, *::after {
+        *,
+        *::before,
+        *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box !important;
         }
 
-        html, body {
+        html,
+        body {
             width: 100%;
             max-width: 100%;
             margin: 0;
@@ -21,7 +24,10 @@
             color: inherit;
         }
 
-        button, input, select, textarea {
+        button,
+        input,
+        select,
+        textarea {
             font-family: inherit;
         }
 
@@ -136,7 +142,7 @@
             left: 0;
             background-color: white;
             min-width: 200px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
             border-radius: 12px;
             border: 1px solid var(--border);
             padding: 8px 0;
@@ -166,6 +172,20 @@
             opacity: 1;
             visibility: visible;
             transform: translateY(0) scale(1);
+        }
+
+        .dropdown-header {
+            padding: 8px 16px 4px 16px;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--pink-dark);
+            letter-spacing: 0.5px;
+        }
+
+        .dropdown-divider {
+            height: 1px;
+            background-color: var(--border);
+            margin: 6px 0;
         }
 
         .mobile-menu-btn {
@@ -230,13 +250,13 @@
             overflow: hidden;
             border: 1px solid var(--border);
             background: #ffffff;
-            box-shadow: 0 10px 25px rgba(70,45,45,.05);
+            box-shadow: 0 10px 25px rgba(70, 45, 45, .05);
             touch-action: pan-y;
             transition: box-shadow 0.4s ease;
         }
 
         .image-wrapper:hover {
-            box-shadow: 0 15px 35px rgba(70,45,45,.1);
+            box-shadow: 0 15px 35px rgba(70, 45, 45, .1);
         }
 
         .main-image-slider {
@@ -300,8 +320,17 @@
         }
 
         @keyframes pulseDot {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.4); opacity: 0.6; }
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.4);
+                opacity: 0.6;
+            }
         }
 
         .thumbnail-list {
@@ -341,20 +370,32 @@
             width: 100%;
         }
 
-        .detail-info > * {
+        .detail-info>* {
             animation: fadeInTranslateScale 0.7s cubic-bezier(0.165, 0.84, 0.44, 1) both;
         }
 
-        .detail-info > *:nth-child(1) { animation-delay: 0.15s; }
-        .detail-info > *:nth-child(2) { animation-delay: 0.25s; }
-        .detail-info > *:nth-child(3) { animation-delay: 0.35s; }
-        .detail-info > *:nth-child(4) { animation-delay: 0.45s; }
+        .detail-info>*:nth-child(1) {
+            animation-delay: 0.15s;
+        }
+
+        .detail-info>*:nth-child(2) {
+            animation-delay: 0.25s;
+        }
+
+        .detail-info>*:nth-child(3) {
+            animation-delay: 0.35s;
+        }
+
+        .detail-info>*:nth-child(4) {
+            animation-delay: 0.45s;
+        }
 
         @keyframes fadeInTranslateScale {
             0% {
                 opacity: 0;
                 transform: translateY(20px) scale(0.97);
             }
+
             100% {
                 opacity: 1;
                 transform: translateY(0) scale(1);
@@ -408,7 +449,8 @@
             flex-wrap: wrap;
         }
 
-        .badge-promo, .badge-ongkir {
+        .badge-promo,
+        .badge-ongkir {
             color: white;
             font-size: 10px;
             font-weight: 700;
@@ -420,24 +462,35 @@
             overflow: hidden;
         }
 
-        .badge-promo::after, .badge-ongkir::after {
+        .badge-promo::after,
+        .badge-ongkir::after {
             content: '';
             position: absolute;
             top: 0;
             left: -100%;
             width: 50%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
             animation: shimmer 2.5s infinite;
         }
 
         @keyframes shimmer {
-            0% { left: -100%; }
-            100% { left: 200%; }
+            0% {
+                left: -100%;
+            }
+
+            100% {
+                left: 200%;
+            }
         }
 
-        .badge-promo { background: #e74c3c; }
-        .badge-ongkir { background: #27ae60; }
+        .badge-promo {
+            background: #e74c3c;
+        }
+
+        .badge-ongkir {
+            background: #27ae60;
+        }
 
         .price-wrapper {
             display: flex;
@@ -470,14 +523,16 @@
             display: block;
         }
 
-        .description-box, .size-chart-box {
+        .description-box,
+        .size-chart-box {
             margin-bottom: 24px;
             width: 100%;
             font-family: 'Poppins', sans-serif;
             font-weight: 400;
         }
 
-        .description-box h3, .size-chart-box h3 {
+        .description-box h3,
+        .size-chart-box h3 {
             font-family: 'Poppins', sans-serif;
             font-size: 15px;
             font-weight: 600;
@@ -522,7 +577,7 @@
             border-radius: 12px;
             border: 1px solid var(--border);
             -webkit-overflow-scrolling: touch;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
         }
 
         .size-table {
@@ -580,14 +635,14 @@
             border: 1px solid var(--border);
             border-radius: 18px;
             padding: 22px 18px;
-            box-shadow: 0 12px 30px rgba(60,40,40,.05);
+            box-shadow: 0 12px 30px rgba(60, 40, 40, .05);
             width: 100%;
             margin-bottom: 24px;
             transition: box-shadow 0.3s ease;
         }
 
         .detail-order-card:hover {
-            box-shadow: 0 16px 36px rgba(60,40,40,.08);
+            box-shadow: 0 16px 36px rgba(60, 40, 40, .08);
         }
 
         .step-progress-header {
@@ -693,7 +748,7 @@
         .pill-btn:hover {
             border-color: var(--pink);
             transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
         }
 
         .pill-btn:active {
@@ -834,7 +889,8 @@
             color: var(--pink-dark);
         }
 
-        .next-step-button, .order-button {
+        .next-step-button,
+        .order-button {
             font-family: 'Poppins', sans-serif;
             font-weight: 600;
             width: 100%;
@@ -853,13 +909,15 @@
             box-shadow: 0 4px 15px rgba(37, 166, 90, 0.25);
         }
 
-        .next-step-button:hover, .order-button:hover {
+        .next-step-button:hover,
+        .order-button:hover {
             background: var(--green-dark);
             transform: translateY(-2px) scale(1.01);
             box-shadow: 0 8px 20px rgba(37, 166, 90, 0.35);
         }
 
-        .next-step-button:active, .order-button:active {
+        .next-step-button:active,
+        .order-button:active {
             transform: scale(0.97);
         }
 
@@ -903,7 +961,7 @@
             justify-content: space-between;
             align-items: center;
             z-index: 999;
-            box-shadow: 0 -6px 20px rgba(0,0,0,0.08);
+            box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.08);
             opacity: 1;
             transform: translateY(0) scale(1);
             transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1), visibility 0.35s;
@@ -982,9 +1040,11 @@
             .sticky-bottom-bar {
                 display: none !important;
             }
+
             .product-detail-section {
                 padding-bottom: 50px;
             }
+
             footer {
                 padding-bottom: 25px;
             }
@@ -1012,7 +1072,7 @@
                 padding: 16px 20px;
                 gap: 12px;
                 border-bottom: 1px solid var(--border);
-                box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
                 display: none;
                 opacity: 0;
                 transform: translateY(-10px) scale(0.98);
