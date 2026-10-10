@@ -1016,24 +1016,129 @@
             transform: scale(0.95);
         }
 
-        footer {
-            padding: 25px 16px;
+        /* FOOTER SECTION */
+        .site-footer {
             background: #292323;
-            color: white;
-            text-align: center;
-            width: 100%;
-            padding-bottom: 80px;
+            color: #ffffff;
+            padding-top: 60px;
+            border-top: 1px solid var(--border);
         }
 
-        .footer-logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 22px;
-            margin-bottom: 6px;
+        .footer-container {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 40px;
+            padding-bottom: 50px;
         }
 
-        footer p {
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .footer-logo-wrapper {
+            display: inline-block;
+            text-decoration: none;
+            margin-bottom: 16px;
+        }
+
+        /* LOGO MENJADI PUTIH BERSIH */
+        .footer-logo-img.white-logo {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-bio {
             color: #afa2a2;
-            font-size: 11px;
+            font-size: 13px;
+            line-height: 1.7;
+            max-width: 320px;
+        }
+
+        .footer-links h4,
+        .footer-contact h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            margin-bottom: 18px;
+            color: #ffffff;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-link-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #afa2a2;
+            font-size: 13px;
+            transition: color 0.2s ease;
+            text-decoration: none;
+        }
+
+        .footer-svg-icon {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        .footer-link-item:hover {
+            color: var(--pink-light);
+        }
+
+        .footer-contact p {
+            color: #afa2a2;
+            font-size: 13px;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .wa-footer-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: #25d366;
+            color: #ffffff;
+            padding: 10px 18px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .wa-svg-icon {
+            width: 18px;
+            height: 18px;
+            fill: #ffffff;
+        }
+
+        .wa-footer-btn:hover {
+            background: #1ebc57;
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            background: #1f1a1a;
+            padding: 20px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .footer-bottom p {
+            color: #817474;
+            font-size: 12px;
         }
 
         @media screen and (min-width: 851px) {
@@ -1134,4 +1239,35 @@
                 font-size: 11px;
                 padding: 8px 3px;
             }
+        }
+
+        /* 1. Ikon SVG di dalam Dropdown Header Navbar */
+        .nav-svg-icon {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+            flex-shrink: 0;
+        }
+
+        /* 2. Ikon SVG di dalam Link Footer */
+        .footer-svg-icon {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+            flex-shrink: 0;
+        }
+
+        /* Penyelarasan Teks & Ikon di Footer */
+        .footer-link-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #afa2a2;
+            font-size: 13px;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-link-item:hover {
+            color: var(--pink-light, #f5e5e2);
         }

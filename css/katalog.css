@@ -1,0 +1,89 @@
+        /* CSS Khusus Halaman Katalog ala Linktree */
+        .catalog-page {
+            padding-top: 100px;
+            padding-bottom: 80px;
+            min-height: 80vh;
+        }
+
+        .catalog-header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+        }
+
+        .catalog-list-wrapper {
+            max-width: 580px;
+            margin: 0 auto;
+        }
+
+        .category-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--pink-dark, #a96565);
+            margin: 32px 0 16px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--border, #eadfdb);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .category-title:first-child {
+            margin-top: 0;
+        }
+
+        .linktree-card {
+            display: flex;
+            align-items: center;
+            background: #ffffff;
+            border: 1px solid var(--border, #eadfdb);
+            border-radius: 16px;
+            padding: 10px 16px;
+            margin-bottom: 14px;
+            text-decoration: none;
+            color: var(--dark, #292323);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+            transition: all 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .linktree-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--pink-dark, #a96565);
+            box-shadow: 0 10px 25px rgba(169, 101, 101, 0.12);
+        }
+
+        .linktree-thumb {
+            width: 54px;
+            height: 54px;
+            border-radius: 10px;
+            object-fit: cover;
+            background-color: #f5e5e2;
+            flex-shrink: 0;
+        }
+
+        .linktree-name {
+            flex-grow: 1;
+            text-align: center;
+            font-weight: 600;
+            font-size: 15px;
+            padding: 0 12px;
+            color: var(--dark, #292323);
+            transition: color 0.2s ease;
+        }
+
+        .linktree-card:hover .linktree-name {
+            color: var(--pink-dark, #a96565);
+        }
+
+        .linktree-arrow {
+            font-size: 16px;
+            color: #afa2a2;
+            transition: transform 0.2s ease, color 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .linktree-card:hover .linktree-arrow {
+            transform: translateX(4px);
+            color: var(--pink-dark, #a96565);
+        }
